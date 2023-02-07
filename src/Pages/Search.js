@@ -1,20 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Home() {
+function Search() {
   let navigate = useNavigate();
   return (
-    <div class="home">
-      THIS IS THE HOME
+    <div class="search">
+      THIS IS SEARCH
       <button
         onClick={() => {
-          navigate("/search");
+          navigate("/new");
         }}
       >
-        Where are you going?
+        Let's go!
       </button>
     </div>
   );
 }
 
-export default Home;
+export default Search;

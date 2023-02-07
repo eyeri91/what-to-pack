@@ -1,9 +1,11 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./Pages/Home";
 import New from "./Pages/New";
 import Saved from "./Pages/Saved";
+import Search from "./Pages/Search";
 import ErrorPage from "./Pages/Error";
 
 function App() {
@@ -15,8 +17,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />
         <Route path="/saved" element={<Saved />} />
+        <Route path="/search" element={<Search />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
