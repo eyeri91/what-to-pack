@@ -2,8 +2,9 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
-import Add from "./Pages/Add";
+import New from "./Pages/New";
 import Saved from "./Pages/Saved";
+import ErrorPage from "./Pages/Error";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Routes>
         {/* Main page */}
         <Route path="/" element={<Home />} />
-        <Route path="/add" element={<Add />} />
+        <Route path="/new" element={<New />} />
         <Route path="/saved" element={<Saved />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );
