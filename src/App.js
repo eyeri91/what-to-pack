@@ -16,8 +16,9 @@ function App() {
         {/* Main page */}
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />
-        <Route path="/saved" element={<Saved />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/saved/" element={<Saved />} />
+        <Route path="/saved/:tripName" element={<Saved />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
