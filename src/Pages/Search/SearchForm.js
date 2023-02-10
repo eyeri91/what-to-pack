@@ -4,7 +4,7 @@ import weather from "../../services/WeatherAPI";
 
 export default function SearchForm() {
   let navigate = useNavigate();
-  const [city, setCity] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,8 +16,8 @@ export default function SearchForm() {
         <input
           required
           placeholder="Seoul"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
         />
       </label>
       <button
@@ -25,7 +25,7 @@ export default function SearchForm() {
         className="btn btn-sm btn-primary"
         onClick={() => {
           navigate("/new");
-          weather.fetchWeather(city);
+          weather.fetchWeather(location);
         }}
       >
         Let's go!
