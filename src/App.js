@@ -1,11 +1,13 @@
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "./assets/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./Pages/Home";
+import Home from "./Pages/Home/Home";
 import New from "./Pages/New";
 import Saved from "./Pages/Saved";
-import Search from "./Pages/Search";
+import Search from "./Pages/Search/Search";
 import ErrorPage from "./Pages/Error";
 
 function App() {

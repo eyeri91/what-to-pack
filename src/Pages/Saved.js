@@ -5,8 +5,8 @@ function Saved() {
   let navigate = useNavigate();
   let { tripName } = useParams();
   return (
-    <div class="saved">
-      THIS IS SAVED
+    <div className="saved">
+      THIS IS SAVED {tripName && `page for ${tripName}`}
       {tripName && (
         <button
           onClick={() => {
