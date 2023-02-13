@@ -1,25 +1,26 @@
 const weather = {
   apiKey: "c6c588d9f20d96f525cf99708e91edee",
-  fetchWeather: function (city) {
+  fetchWeather: function(city) {
     fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      "https://api.openweathermap.org/data/2.5/forecast/daily?q=" +
         city +
-        "&units=metric&appid=" +
+        "&units=metric&cnt=10&appid=" +
         this.apiKey
     )
       .then((response) => response.json())
       .then((data) => this.getWeatherDetails(data));
   },
   getWeatherDetails: (data) => {
-    const weatherDetails = {
-      location: data.name,
-      status: data.weather[0].main,
-      description: data.weather[0].description,
-      currentTemp: data.main.temp,
-      maxTemp: data.main.temp_max,
-      minTemp: data.main.temp_min,
-    };
-    return weatherDetails;
+    console.log(data);
+    // const weatherDetails = {
+    //   location: data.city.name,
+    //   status: data.weather[0].main,
+    //   description: data.weather[0].description,
+    //   currentTemp: data.main.temp,
+    //   maxTemp: data.main.temp_max,
+    //   minTemp: data.main.temp_min,
+    // };
+    // console.log(weatherDetails);
   },
 };
 
