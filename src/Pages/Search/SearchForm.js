@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { GEO_API_URL, geoApiOptions } from "../../services/SearchLocationAPI";
 
 export default function SearchForm({ onSearchChange }) {
-  let navigate = useNavigate();
-
   const [location, setLocation] = useState(null);
 
   const loadOptions = (input) => {
@@ -41,15 +38,6 @@ export default function SearchForm({ onSearchChange }) {
         onChange={handleOnChange}
         loadOptions={loadOptions}
       />
-      <button
-        type="submit"
-        className="btn btn-sm btn-primary"
-        onClick={() => {
-          navigate("/new");
-        }}
-      >
-        Let's go!
-      </button>
     </div>
   );
 }
