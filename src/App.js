@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./Pages/Home/Home";
-import New from "./Pages/New";
+import New from "./Pages/New/New";
 import Saved from "./Pages/Saved";
 import Search from "./Pages/Search/Search";
 import ErrorPage from "./Pages/Error";

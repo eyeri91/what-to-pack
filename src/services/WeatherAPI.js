@@ -1,6 +1,21 @@
-const weather = {
-  apiKey: "c6c588d9f20d96f525cf99708e91edee",
-  fetchWeather: function(city) {
+export const CURRENT_WEATHER_API_URL =
+  "https://api.openweathermap.org/data/2.5/weather?";
+
+export const CURRENT_WEATHER_API_CONDITION = "&units=metric&appid=";
+
+export const FORECAST_API_URL =
+  "https://api.openweathermap.org/data/2.5/forecast/daily?";
+
+export const FORECAST_API_CONDITION = "&cnt=2&units=metric&appid=";
+
+export const WEAHTER_API_KEY = "c6c588d9f20d96f525cf99708e91edee";
+
+export const setLatAndLon = (lat, lon) => {
+  return `lat=${lat}&lon=${lon}`;
+};
+
+export const weather = {
+  fetchWeather: function (city) {
     fetch(
       "https://api.openweathermap.org/data/2.5/forecast/daily?q=" +
         city +
@@ -23,8 +38,6 @@ const weather = {
     // console.log(weatherDetails);
   },
 };
-
-export default weather;
 
 // https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=c6c588d9f20d96f525cf99708e91edee
 
