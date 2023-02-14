@@ -5,15 +5,16 @@ export const getLocation = (locationObject) => {
   };
 };
 
-export const checkWeather = () => {
+export const checkWeather = (weatherObject) => {
   return {
     type: "CHECKWEATHER",
+    payload: weatherObject,
   };
 };
 
-export const checkForecast = (days) => {
+export const checkForecast = (forecastObject) => {
   return {
     type: "CHECKFORECAST",
-    payload: days,
+    payload: forecastObject,
   };
 };

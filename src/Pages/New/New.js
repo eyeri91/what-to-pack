@@ -1,12 +1,14 @@
 import React from "react";
-import WeatherDisplay from "./Weather";
 import Title from "./Title";
+import CurrentWeather from "./CurrentWeather";
+import Forecast from "./Forecast";
 
 function New() {
   return (
     <div className="new-list">
-      <WeatherDisplay />
       <Title />
+      <CurrentWeather />
+      <Forecast />
     </div>
   );
 }
