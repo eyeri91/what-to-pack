@@ -1,14 +1,14 @@
 import React from "react";
 import Title from "./Title";
-import CurrentWeather from "./CurrentWeather";
-import Forecast from "./Forecast";
+import Weather from "./Weather";
+import { useSelector } from "react-redux";
 
 function New() {
+  const location = useSelector((state) => state.location);
   return (
     <div className="new-list">
       <Title />
-      <CurrentWeather />
-      <Forecast />
+      {location ? <Weather /> : <p> Weather is not available</p>}
     </div>
   );
 }

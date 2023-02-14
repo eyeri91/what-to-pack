@@ -1,4 +1,4 @@
-const locationObjectParser = (input) => {
+export const locationObjectParser = (input) => {
   const labels = input.label.split(" ");
   const latAndLon = input.value.split(" ");
 
@@ -11,4 +11,7 @@ const locationObjectParser = (input) => {
   return locationObject;
 };
 
-export default locationObjectParser;
+export const roundTemp = (temp) => {
+  const temperature = Number(temp);
+  return Math.round(temperature);
+};
