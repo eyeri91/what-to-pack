@@ -4,11 +4,12 @@ import "./assets/index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { legacy_createStore as createStore } from "redux";
-import allReducers from "./reducers";
+// import allReducers from "./reducers";
+import locationReducer from "./reducers/location";
 import { Provider } from "react-redux";
 
 const store = createStore(
-  allReducers,
+  locationReducer,
   +window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 const root = ReactDOM.createRoot(document.getElementById("root"));
