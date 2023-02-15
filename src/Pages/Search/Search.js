@@ -1,14 +1,13 @@
 import React from "react";
 import SearchForm from "./SearchForm";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { locationObjectParser } from "../../utils/utils";
 import { getLocation } from "../../redux/locatorSlice";
 
 function Search() {
   let locationObject;
   let navigate = useNavigate();
-  const location = useSelector((state) => state.locator.location);
   const dispatch = useDispatch();
   const handleOnSearchChange = (searchInput) => {
     locationObject = locationObjectParser(searchInput);

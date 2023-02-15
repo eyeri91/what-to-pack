@@ -4,7 +4,7 @@ import Weather from "./Weather";
 import { useSelector } from "react-redux";
 
 function New() {
-  const location = useSelector((state) => state.location);
+  const location = useSelector((state) => state.locator.location);
   return (
     <div className="new-list">
       <Title />

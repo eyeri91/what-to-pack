@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { checkWeather } from "../../redux/currentWeatherSlice";
 import {
   setLatAndLon,
   CURRENT_WEATHER_API_CONDITION,
@@ -10,32 +11,28 @@ import {
 } from "../../services/WeatherAPI";
 import { roundTemp } from "../../utils/utils";
 
-import CurrentWeather from "./CurrentWeather";
+// import CurrentWeather from "./CurrentWeather";
 
-const createCurrentObjectDetails = (currentWeatherInfo) => {
-  const currentWeatherObject = {
-    name: currentWeatherInfo.name,
-    countryCode: currentWeatherInfo.sys.country,
-    currentTemp: roundTemp(currentWeatherInfo.main.temp),
-    feelsLike: roundTemp(currentWeatherInfo.main.feels_like),
-    description: currentWeatherInfo.weather[0].description,
-    main: currentWeatherInfo.weather[0].main,
-    icon: currentWeatherInfo.weather[0].icon,
-  };
+// const createCurrentObjectDetails = (currentWeatherInfo) => {
+//   const currentWeatherObject = {
+//     name: currentWeatherInfo.name,
+//     countryCode: currentWeatherInfo.sys.country,
+//     currentTemp: roundTemp(currentWeatherInfo.main.temp),
+//     feelsLike: roundTemp(currentWeatherInfo.main.feels_like),
+//     description: currentWeatherInfo.weather[0].description,
+//     main: currentWeatherInfo.weather[0].main,
+//     icon: currentWeatherInfo.weather[0].icon,
+//   };
 
-  return currentWeatherObject;
-};
+//   return currentWeatherObject;
+// };
 
 const Weather = () => {
-  const [currentWeather, setCurrentWeather] = useState(null);
-  const [forecast, setForecast] = useState(null);
-
   const dispatch = useDispatch();
 
-  const location = useSelector((state) => state.location);
+  let currentWeatherObject;
+  const location = useSelector((state) => state.locator.location);
   const latAndLon = setLatAndLon(location.lat, location.lon);
-
-  useEffect(() => {});
 
   const currentWeatherFetch = fetch(
     CURRENT_WEATHER_API_URL +
@@ -51,11 +48,8 @@ const Weather = () => {
     const currentWeatherResponse = await res[0].json();
     const forecastResponse = await res[1].json();
 
-    const createCurrentObject = createCurrentObjectDetails(
-      currentWeatherResponse
-    );
-    // console.log(createCurrentObject);
-    setCurrentWeather(createCurrentObject);
+    // currentWeatherObject = createCurrentObjectDetails(currentWeatherResponse);
+    console.log(currentWeatherResponse);
   });
 
   return <div>Here is the weather</div>;
