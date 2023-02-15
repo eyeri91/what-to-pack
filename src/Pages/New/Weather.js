@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setLatAndLon,
@@ -9,7 +9,8 @@ import {
   WEAHTER_API_KEY,
 } from "../../services/WeatherAPI";
 import { roundTemp } from "../../utils/utils";
-import { checkWeather, checkForecast } from "../../actions";
+import { checkWeather, checkForecast } from "../../redux/actions";
+import CurrentWeather from "./CurrentWeather";
 
 const createCurrentObjectDetails = (currentWeatherInfo) => {
   const currentWeatherObject = {
@@ -34,6 +35,8 @@ const Weather = () => {
   const location = useSelector((state) => state.location);
   const latAndLon = setLatAndLon(location.lat, location.lon);
 
+  useEffect(() => {});
+
   const currentWeatherFetch = fetch(
     CURRENT_WEATHER_API_URL +
       latAndLon +
@@ -51,10 +54,9 @@ const Weather = () => {
     const createCurrentObject = createCurrentObjectDetails(
       currentWeatherResponse
     );
-    console.log(createCurrentObject);
+    // console.log(createCurrentObject);
     dispatch(checkWeather(createCurrentObject));
-
-    // console.log(forecastResponse);
+    setCurrentWeather(createCurrentObject);
   });
 
   return <div>Here is the weather</div>;

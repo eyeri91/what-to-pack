@@ -3,7 +3,7 @@ import SearchForm from "./SearchForm";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { locationObjectParser } from "../../utils/utils";
-import { getLocation } from "../../actions";
+import { getLocation } from "../../redux/actions";
 
 function Search() {
   let locationObject;
