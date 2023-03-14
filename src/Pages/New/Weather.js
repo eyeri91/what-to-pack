@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { checkWeather } from "../../redux/currentWeatherSlice";
-import store from "../../redux/store";
+import { checkForecast } from "../../redux/forecastCheckSlice";
 import {
   setLatAndLon,
   CURRENT_WEATHER_API_CONDITION,
@@ -10,31 +10,24 @@ import {
   FORECAST_API_CONDITION,
   WEAHTER_API_KEY,
 } from "../../services/WeatherAPI";
-import { roundTemp } from "../../utils/utils";
+import { createCurrentWeatherObject } from "../../utils/utils";
 import WeatherCard from "./CurrentWeather";
-
-const createCurrentObjectDetails = (currentWeatherInfo) => {
-  const currentWeatherObject = {
-    name: currentWeatherInfo.name,
-    countryCode: currentWeatherInfo.sys.country,
-    currentTemp: roundTemp(currentWeatherInfo.main.temp),
-    feelsLike: roundTemp(currentWeatherInfo.main.feels_like),
-    description: currentWeatherInfo.weather[0].description,
-    main: currentWeatherInfo.weather[0].main,
-    icon: currentWeatherInfo.weather[0].icon,
-  };
-
-  return currentWeatherObject;
-};
+import ForecastCard from "./Forecast";
 
 const Weather = () => {
+  let currentWeatherObject;
+  let forecastObject;
+
   const dispatch = useDispatch();
+
   const currentWeatherState = useSelector(
     (state) => state.weather.weather,
     shallowEqual
   );
-  let currentWeatherObject;
-
+  const forecastState = useSelector(
+    (state) => state.forecast.forecast,
+    shallowEqual
+  );
   const location = useSelector((state) => state.locator.location);
   const latAndLon = setLatAndLon(location.lat, location.lon);
 
@@ -44,6 +37,7 @@ const Weather = () => {
       CURRENT_WEATHER_API_CONDITION +
       WEAHTER_API_KEY
   );
+
   const forecastFetch = fetch(
     FORECAST_API_URL + latAndLon + FORECAST_API_CONDITION + WEAHTER_API_KEY
   );
@@ -52,8 +46,20 @@ const Weather = () => {
     const currentWeatherResponse = await res[0].json();
     const forecastResponse = await res[1].json();
 
-    // currentWeatherObject = createCurrentObjectDetails(currentWeatherResponse);
+    // currentWeatherObject = createCurrentWeatherObject(currentWeatherResponse);
+    // The weather related 2 objects below are temporary data
+    // as API requests are blocked at the moment
     currentWeatherObject = {
+      name: "ss",
+      countryCode: "ss",
+      currentTemp: "38",
+      feelsLike: "37",
+      description: "asd",
+      main: "asd",
+      icon: "s",
+    };
+    // forecastObject = createForecastObject(forecastResponse);
+    forecastObject = {
       name: "ss",
       countryCode: "ss",
       currentTemp: "38",
@@ -64,15 +70,22 @@ const Weather = () => {
     };
 
     dispatch(checkWeather(currentWeatherObject));
+    dispatch(checkForecast(forecastObject));
   });
 
   return (
     <div className="weather-container">
       {currentWeatherState ? (
-        <p> State is loaded</p>
+        <p> Current weather is loaded</p>
       ) : (
         // <WeatherCard props={currentWeatherState} />
-        <p> Loading ... </p>
+        <p> Loading current weather... </p>
+      )}
+      {forecastState ? (
+        <p> Forecast is loaded</p>
+      ) : (
+        // <ForecastCard props={forecastState} />
+        <p> Loading forecast... </p>
       )}
     </div>
   );

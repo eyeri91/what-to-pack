@@ -1,10 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
-const Forecast = () => {
-  const forecastState = useSelector((state) => state.forecast);
-  console.log(forecastState);
-  return <h1>Forecast</h1>;
+const ForecastCard = ({ props }) => {
+  return (
+    <div className="forecast-card">
+      <p>Date: </p>
+      <h1>Min temp: / Max temp: </h1>
+      <p>Description: </p>
+      <p>Date: </p>
+      <h1>Min temp: / Max temp: </h1>
+      <p>Description: </p>s
+    </div>
+  );
 };
 
-export default Forecast;
+export default ForecastCard;
