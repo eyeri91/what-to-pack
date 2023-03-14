@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { checkWeather } from "../../redux/currentWeatherSlice";
 import store from "../../redux/store";
 import {
@@ -29,8 +29,10 @@ const createCurrentObjectDetails = (currentWeatherInfo) => {
 
 const Weather = () => {
   const dispatch = useDispatch();
-  const currentWeatherState = useSelector((state) => state.weather.weather);
-
+  const currentWeatherState = useSelector(
+    (state) => state.weather.weather,
+    shallowEqual
+  );
   let currentWeatherObject;
 
   const location = useSelector((state) => state.locator.location);
@@ -67,9 +69,10 @@ const Weather = () => {
   return (
     <div className="weather-container">
       {currentWeatherState ? (
-        <WeatherCard props={currentWeatherState} />
+        <p> State is loaded</p>
       ) : (
-        <p> State is not loaded</p>
+        // <WeatherCard props={currentWeatherState} />
+        <p> Loading ... </p>
       )}
     </div>
   );
