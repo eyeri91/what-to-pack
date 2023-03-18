@@ -46,47 +46,48 @@ const Weather = () => {
     const currentWeatherResponse = await res[0].json();
     const forecastResponse = await res[1].json();
 
-    // currentWeatherObject = createCurrentWeatherObject(currentWeatherResponse);
+    currentWeatherObject = createCurrentWeatherObject(currentWeatherResponse);
+    console.log(forecastResponse);
     // The weather related 2 objects below are temporary data
     // as API requests are blocked at the moment
-    currentWeatherObject = {
-      name: "ss",
-      countryCode: "ss",
-      currentTemp: "38",
-      feelsLike: "37",
-      description: "asd",
-      main: "asd",
-      icon: "s",
-    };
+    // currentWeatherObject = {
+    //   name: "ss",
+    //   countryCode: "ss",
+    //   currentTemp: "38",
+    //   feelsLike: "37",
+    //   description: "asd",
+    //   main: "asd",
+    //   icon: "s",
+    // };
     // forecastObject = createForecastObject(forecastResponse);
-    forecastObject = {
-      name: "ss",
-      countryCode: "ss",
-      currentTemp: "38",
-      feelsLike: "37",
-      description: "asd",
-      main: "asd",
-      icon: "s",
-    };
+    // forecastObject = {
+    //   name: "ss",
+    //   countryCode: "ss",
+    //   currentTemp: "38",
+    //   feelsLike: "37",
+    //   description: "asd",
+    //   main: "asd",
+    //   icon: "s",
+    // };
 
     dispatch(checkWeather(currentWeatherObject));
-    dispatch(checkForecast(forecastObject));
+    // dispatch(checkForecast(forecastObject));
   });
 
   return (
     <div className="weather-container">
       {currentWeatherState ? (
-        <p> Current weather is loaded</p>
+        // <p> Current weather is loaded</p>
+        <WeatherCard props={currentWeatherState} />
       ) : (
-        // <WeatherCard props={currentWeatherState} />
         <p> Loading current weather... </p>
       )}
-      {forecastState ? (
-        <p> Forecast is loaded</p>
+      {/* {forecastState ? (
+        // <p> Forecast is loaded</p>
+        <ForecastCard props={forecastState} />
       ) : (
-        // <ForecastCard props={forecastState} />
         <p> Loading forecast... </p>
-      )}
+      )} */}
     </div>
   );
 };
