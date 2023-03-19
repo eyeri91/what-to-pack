@@ -4,31 +4,20 @@ import { checkWeather } from "../../redux/currentWeatherSlice";
 // import { checkForecast } from "../../redux/forecastCheckSlice";
 import {
   setLatAndLon,
-  CURRENT_WEATHER_API_CONDITION,
-  CURRENT_WEATHER_API_URL,
-  FORECAST_API_URL,
-  FORECAST_API_CONDITION,
-  WEAHTER_API_KEY,
+  currentWeatherFetch,
+  forecastFetch,
 } from "../../services/WeatherAPI";
 import { createCurrentWeatherObject } from "../../utils/utils";
 import WeatherCard from "./CurrentWeather";
 // import ForecastCard from "./Forecast";
 
+let latAndLon;
+
 const Weather = () => {
   const dispatch = useDispatch();
   const location = useSelector((state) => state.locator.location);
-  const latAndLon = setLatAndLon(location.lat, location.lon);
+  latAndLon = setLatAndLon(location.lat, location.lon);
 
-  const currentWeatherFetch = fetch(
-    CURRENT_WEATHER_API_URL +
-      latAndLon +
-      CURRENT_WEATHER_API_CONDITION +
-      WEAHTER_API_KEY
-  );
-
-  const forecastFetch = fetch(
-    FORECAST_API_URL + latAndLon + FORECAST_API_CONDITION + WEAHTER_API_KEY
-  );
   console.log("render");
 
   useEffect(() => {
@@ -36,7 +25,10 @@ const Weather = () => {
     // let forecastObject;
 
     const fetchWeatherData = async () =>
-      Promise.all([currentWeatherFetch, forecastFetch]).then(async (res) => {
+      Promise.all([
+        currentWeatherFetch(latAndLon),
+        forecastFetch(latAndLon),
+      ]).then(async (res) => {
         const currentWeatherResponse = await res[0].json();
         // const forecastResponse = await res[1].json();
 
@@ -49,8 +41,7 @@ const Weather = () => {
         // dispatch(checkForecast(forecastObject));
       });
     fetchWeatherData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   const currentWeatherState = useSelector(
     (state) => state.weather.weather,

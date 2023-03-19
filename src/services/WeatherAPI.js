@@ -11,3 +11,16 @@ export const FORECAST_API_CONDITION = "&cnt=5&units=metric&appid=";
 export const setLatAndLon = (lat, lon) => {
   return `lat=${lat}&lon=${lon}`;
 };
+
+export const currentWeatherFetch = (latAndLon) =>
+  fetch(
+    CURRENT_WEATHER_API_URL +
+      latAndLon +
+      CURRENT_WEATHER_API_CONDITION +
+      WEAHTER_API_KEY
+  );
+
+export const forecastFetch = (latAndLon) =>
+  fetch(
+    FORECAST_API_URL + latAndLon + FORECAST_API_CONDITION + WEAHTER_API_KEY
+  );
