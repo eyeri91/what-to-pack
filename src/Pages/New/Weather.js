@@ -30,18 +30,19 @@ const Weather = () => {
         forecastFetch(latAndLon),
       ]).then(async (res) => {
         const currentWeatherResponse = await res[0].json();
-        // const forecastResponse = await res[1].json();
+        const forecastResponse = await res[1].json();
 
-        currentWeatherObject = createCurrentWeatherObject(
-          currentWeatherResponse
-        );
-        console.log("setWeather");
+        // currentWeatherObject = createCurrentWeatherObject(
+        //   currentWeatherResponse
+        // );
+        console.log(currentWeatherResponse);
+        console.log(forecastResponse);
 
-        dispatch(checkWeather(currentWeatherObject));
+        // dispatch(checkWeather(currentWeatherObject));
         // dispatch(checkForecast(forecastObject));
       });
     fetchWeatherData();
-  }, [dispatch]);
+  }, []);
 
   const currentWeatherState = useSelector(
     (state) => state.weather.weather,

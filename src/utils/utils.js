@@ -3,11 +3,12 @@ export const locationObjectParser = (input) => {
   const latAndLon = input.value.split(" ");
 
   const locationObject = {
-    city: labels[0],
-    countryCode: labels[1],
+    city: labels.length > 2 ? `${labels[0]} ${labels[1]}` : labels[0],
+    countryCode: labels.length > 2 ? labels[2] : labels[1],
     lat: latAndLon[0],
     lon: latAndLon[1],
   };
+  console.log(locationObject);
   return locationObject;
 };
 
@@ -30,7 +31,7 @@ export const createCurrentWeatherObject = (currentWeatherInfo) => {
   return currentWeatherObject;
 };
 
-// export const createForecastObject = (forecastInfo) => {
-//   const forecastObject = {};
-//   return forecastObject;
-// };
+export const createForecastObject = (forecastInfo) => {
+  const forecastObject = {};
+  return forecastObject;
+};
