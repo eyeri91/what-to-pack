@@ -8,7 +8,7 @@ import {
   forecastFetch,
 } from "../../services/WeatherAPI";
 import { createCurrentWeatherObject } from "../../utils/utils";
-import WeatherCard from "./CurrentWeather";
+import WeatherCard from "./WeatherCard";
 // import ForecastCard from "./Forecast";
 
 let latAndLon;

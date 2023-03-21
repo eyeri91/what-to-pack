@@ -1,21 +1,33 @@
-import { couldStartTrivia } from "typescript";
-
-const stringParser = (string, parseMethod = " ") => {
+export const parseString = (string, parseMethod = " ") => {
   const parsedStrings = string.split(parseMethod);
   return parsedStrings;
 };
 
-export const locationObjectParser = (input) => {
-  const labels = stringParser(input.label);
-  const latAndLon = stringParser(input.value);
+const getCityName = (labels) => {
+  const cityNameLabels = labels.slice(0, -1);
+  const cityName = cityNameLabels.reduce(
+    (label, nextLabel) => label + ` ${nextLabel}`,
+    ""
+  );
+  return cityName;
+};
+
+const getCountryCode = (labels) => {
+  const countryCode = labels.pop();
+  return countryCode;
+};
+
+export const parseLocationObject = (input) => {
+  const labels = parseString(input.label);
+  const latAndLon = parseString(input.value);
 
   const locationObject = {
-    city: labels.length > 2 ? `${labels[0]} ${labels[1]}` : labels[0],
-    countryCode: labels.length > 2 ? labels[2] : labels[1],
+    city: getCityName(labels),
+    countryCode: getCountryCode(labels),
     lat: latAndLon[0],
     lon: latAndLon[1],
   };
-  console.log(locationObject);
+
   return locationObject;
 };
 
@@ -25,7 +37,6 @@ export const roundTemp = (temp) => {
 };
 
 export const createCurrentWeatherObject = (currentWeatherInfo) => {
-  // console.log(currentWeatherInfo);
   const locationProperty = currentWeatherInfo.location;
   const weatherProperty = currentWeatherInfo.current;
   const currentWeatherObject = {
@@ -35,7 +46,7 @@ export const createCurrentWeatherObject = (currentWeatherInfo) => {
     feelsLike: roundTemp(weatherProperty.feelslike_c),
     description: weatherProperty.condition.text,
     icon: weatherProperty.condition.icon,
-    date: stringParser(locationProperty.localtime)[0],
+    date: parseString(locationProperty.localtime)[0],
   };
 
   return currentWeatherObject;

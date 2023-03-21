@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "./Title";
+// import Title from "./Title";
 import Weather from "./Weather";
 import { useSelector } from "react-redux";
 import PackingList from "./PackingList";
@@ -10,7 +10,6 @@ function New() {
 
   return (
     <div className="new-list">
-      <Title />
       {locationState ? <Weather /> : <p> Weather is not available</p>}
       {weatherState && <PackingList />}
     </div>
