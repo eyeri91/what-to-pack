@@ -47,12 +47,30 @@ export const createCurrentWeatherObject = (currentWeatherInfo) => {
     description: weatherProperty.condition.text,
     icon: weatherProperty.condition.icon,
     date: parseString(locationProperty.localtime)[0],
+    time: parseString(locationProperty.localtime)[1],
   };
 
   return currentWeatherObject;
 };
 
 export const createForecastObject = (forecastInfo) => {
-  const forecastObject = {};
+  // const forecastProperty = forecastInfo.forecast.forcastday;
+  // date=forecastProperty[0].date
+  // timeProperty = forecastProperty[0].astro.sunrise (or sunset)
+  // tempProperty = forecastProperty[0].day
+  // maxTemp = tempProperty.maxtemp_c;
+  // minTemp = tempProperty.mintemp_c;
+  // description = tempProperty.condition.text
+  // icon = tempProperty.condition.icon
+
+  const forecastObject = {
+    date: "",
+    // sunrise:"",
+    // sunset:"",
+    maxTemp: "",
+    minTemp: "",
+    description: "",
+    icom: "",
+  };
   return forecastObject;
 };
