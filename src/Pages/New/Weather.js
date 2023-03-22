@@ -2,11 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { checkWeather } from "../../redux/currentWeatherSlice";
 // import { checkForecast } from "../../redux/forecastCheckSlice";
-import {
-  setLatAndLon,
-  currentWeatherFetch,
-  forecastFetch,
-} from "../../services/WeatherAPI";
+import { setLatAndLon, fetchWeather } from "../../services/WeatherAPI";
 import { createCurrentWeatherObject } from "../../utils/utils";
 import WeatherCard from "./WeatherCard";
 // import ForecastCard from "./Forecast";
@@ -25,22 +21,15 @@ const Weather = () => {
     // let forecastObject;
 
     const fetchWeatherData = async () =>
-      Promise.all([
-        currentWeatherFetch(latAndLon),
-        forecastFetch(latAndLon),
-      ]).then(async (res) => {
-        const currentWeatherResponse = await res[0].json();
-        const forecastResponse = await res[1].json();
+      await fetchWeather(latAndLon).then(async (res) => {
+        const WeatherResponse = await res.json();
+        console.log(WeatherResponse);
 
-        currentWeatherObject = createCurrentWeatherObject(
-          currentWeatherResponse
-        );
-
-        // console.log(forecastResponse);
-
+        currentWeatherObject = createCurrentWeatherObject(WeatherResponse);
         dispatch(checkWeather(currentWeatherObject));
         // dispatch(checkForecast(forecastObject));
       });
+
     fetchWeatherData();
   }, [dispatch]);
 
