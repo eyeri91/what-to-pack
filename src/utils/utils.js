@@ -54,7 +54,7 @@ export const createCurrentWeatherObject = (currentWeatherInfo) => {
 };
 
 export const createForecastObject = (forecastInfo) => {
-  // const forecastProperty = forecastInfo.forecast.forcastday;
+  // const forecastProperty = forecastInfo.forcastday;
   // date=forecastProperty[0].date
   // timeProperty = forecastProperty[0].astro.sunrise (or sunset)
   // tempProperty = forecastProperty[0].day

@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { checkWeather } from "../../redux/currentWeatherSlice";
-// import { checkForecast } from "../../redux/forecastCheckSlice";
+import { checkForecast } from "../../redux/forecastCheckSlice";
 import { setLatAndLon, fetchWeather } from "../../services/WeatherAPI";
-import { createCurrentWeatherObject } from "../../utils/utils";
+import {
+  createCurrentWeatherObject,
+  createForecastObject,
+} from "../../utils/utils";
 import WeatherCard from "./WeatherCard";
-// import ForecastCard from "./Forecast";
+import ForecastCard from "./ForecastCard";
 
 let latAndLon;
 
@@ -17,8 +20,7 @@ const Weather = () => {
   console.log("render");
 
   useEffect(() => {
-    let currentWeatherObject;
-    // let forecastObject;
+    let currentWeatherObject, forecastObject;
 
     const fetchWeatherData = async () =>
       await fetchWeather(latAndLon).then(async (res) => {
@@ -26,8 +28,10 @@ const Weather = () => {
         console.log(WeatherResponse);
 
         currentWeatherObject = createCurrentWeatherObject(WeatherResponse);
+        forecastObject = createForecastObject(WeatherResponse.forecast);
+
         dispatch(checkWeather(currentWeatherObject));
-        // dispatch(checkForecast(forecastObject));
+        dispatch(checkForecast(forecastObject));
       });
 
     fetchWeatherData();
@@ -38,10 +42,10 @@ const Weather = () => {
     shallowEqual
   );
 
-  // const forecastState = useSelector(
-  //   (state) => state.forecast.forecast,
-  //   shallowEqual
-  // );
+  const forecastState = useSelector(
+    (state) => state.forecast.forecast,
+    shallowEqual
+  );
 
   return (
     <div className="weather-container">
@@ -51,12 +55,12 @@ const Weather = () => {
       ) : (
         <p> Loading current weather... </p>
       )}
-      {/* {forecastState ? (
+      {forecastState ? (
         // <p> Forecast is loaded</p>
         <ForecastCard props={forecastState} />
       ) : (
         <p> Loading forecast... </p>
-      )} */}
+      )}
     </div>
   );
 };
