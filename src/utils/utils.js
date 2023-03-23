@@ -36,7 +36,7 @@ export const roundTemp = (temp) => {
   return Math.round(temperature);
 };
 
-export const createCurrentWeatherObject = (weatherResponse) => {
+export const createWeatherObjects = (weatherResponse) => {
   const locationProperty = weatherResponse.location;
   const weatherProperty = weatherResponse.current;
   const currentWeatherObject = {
@@ -51,47 +51,27 @@ export const createCurrentWeatherObject = (weatherResponse) => {
     time: parseString(locationProperty.localtime)[1],
   };
 
-  const forecastProperty = weatherResponse.forecast.forcastday;
-  // date=forecastProperty[0].date
-  // timeProperty = forecastProperty[0].astro.sunrise (or sunset)
-  const tempProperty = forecastProperty[0].day;
-  // maxTemp = tempProperty.maxtemp_c;
-  // minTemp = tempProperty.mintemp_c;
-  // description = tempProperty.condition.text;
-  // icon = tempProperty.condition.icon
+  const forecastObjectsArray = [];
+  const forecastArray = weatherResponse.forecast.forecastday;
+  // Remove the first item in the array as it is the same as today's weather
+  forecastArray.shift();
 
-  const forecastObject = {
-    date: forecastProperty[0].date,
-    // sunrise:"",
-    // sunset:"",
+  forecastArray.forEach((item) => {
+    const forecastForDay = createForecastObject(item);
+    forecastObjectsArray.push(forecastForDay);
+  });
+
+  return [currentWeatherObject, forecastObjectsArray];
+};
+
+const createForecastObject = (forecastItem) => {
+  const tempProperty = forecastItem.day;
+  const forecastForDay = {
+    date: forecastItem.date,
     maxTemp: tempProperty.maxtemp_c,
     minTemp: tempProperty.mintemp_c,
     description: tempProperty.condition.text,
     icon: tempProperty.condition.icon,
   };
-
-  return [currentWeatherObject, forecastObject];
+  return forecastForDay;
 };
-
-// export const createForecastObject = (weatherResponse) => {
-//   const forecastProperty = weatherResponse.forecast.forcastday;
-//   console.log(weatherResponse);
-//   // date=forecastProperty[0].date
-//   // timeProperty = forecastProperty[0].astro.sunrise (or sunset)
-//   const tempProperty = forecastProperty[0].day;
-//   // maxTemp = tempProperty.maxtemp_c;
-//   // minTemp = tempProperty.mintemp_c;
-//   // description = tempProperty.condition.text;
-//   // icon = tempProperty.condition.icon
-
-//   const forecastObject = {
-//     date: forecastProperty[0].date,
-//     // sunrise:"",
-//     // sunset:"",
-//     maxTemp: tempProperty.maxtemp_c,
-//     minTemp: tempProperty.mintemp_c,
-//     description: tempProperty.condition.text,
-//     icon: tempProperty.condition.icon,
-//   };
-//   return forecastObject;
-// };

@@ -3,10 +3,7 @@ import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { checkWeather } from "../../redux/currentWeatherSlice";
 import { checkForecast } from "../../redux/forecastCheckSlice";
 import { setLatAndLon, fetchWeather } from "../../services/WeatherAPI";
-import {
-  createCurrentWeatherObject,
-  createForecastObject,
-} from "../../utils/utils";
+import { createWeatherObjects } from "../../utils/utils";
 import WeatherCard from "./WeatherCard";
 import ForecastCard from "./ForecastCard";
 
@@ -20,18 +17,17 @@ const Weather = () => {
   console.log("render");
 
   useEffect(() => {
-    let currentWeatherObject, forecastObject;
+    let currentWeatherObject, forecastObjectsArray;
 
     const fetchWeatherData = async () =>
       await fetchWeather(latAndLon).then(async (res) => {
         const WeatherResponse = await res.json();
-        // console.log(WeatherResponse);
 
-        [currentWeatherObject, forecastObject] =
-          createCurrentWeatherObject(WeatherResponse);
+        [currentWeatherObject, forecastObjectsArray] =
+          createWeatherObjects(WeatherResponse);
 
         dispatch(checkWeather(currentWeatherObject));
-        dispatch(checkForecast(forecastObject));
+        dispatch(checkForecast(forecastObjectsArray));
       });
 
     fetchWeatherData();
@@ -55,9 +51,9 @@ const Weather = () => {
         <p> Loading current weather... </p>
       )}
       {forecastState ? (
-        // <p> Forecast is loaded</p>
-        <ForecastCard props={forecastState} />
+        forecastState.map((day) => <ForecastCard props={day} />)
       ) : (
+        // <ForecastCard props={forecastState} />
         <p> Loading forecast... </p>
       )}
     </div>

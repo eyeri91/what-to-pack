@@ -5,7 +5,8 @@ import React from "react";
 const WeatherCard = ({ props }) => {
   return (
     <div className="weather-card">
-      <h1>{`${props.region ?? props.city} ${props.country}`}</h1>
+      <h1>{`${props.region || props.city}, ${props.country}`}</h1>
+      <h3>{props.date}</h3>
       <h3>Current Temperature: {props.currentTemp}</h3>
       <h3>Feels like: {props.feelsLike}</h3>
       <p>
