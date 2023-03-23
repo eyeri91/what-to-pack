@@ -41,6 +41,7 @@ export const createCurrentWeatherObject = (currentWeatherInfo) => {
   const weatherProperty = currentWeatherInfo.current;
   const currentWeatherObject = {
     city: locationProperty.name,
+    region: locationProperty.region ?? "",
     country: locationProperty.country,
     currentTemp: roundTemp(weatherProperty.temp_c),
     feelsLike: roundTemp(weatherProperty.feelslike_c),
