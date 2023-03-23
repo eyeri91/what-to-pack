@@ -3,6 +3,13 @@ export const parseString = (string, parseMethod = " ") => {
   return parsedStrings;
 };
 
+export const reformDate = (date, joinMethod, removeYear) => {
+  const parsedDate = parseString(date, "-");
+  if (removeYear) parsedDate.shift();
+  const reformedDate = parsedDate.join(joinMethod);
+  return reformedDate;
+};
+
 const getCityName = (labels) => {
   const cityNameLabels = labels.slice(0, -1);
   const cityName = cityNameLabels.reduce(
@@ -39,7 +46,11 @@ export const roundTemp = (temp) => {
 export const createWeatherObjects = (weatherResponse) => {
   const locationProperty = weatherResponse.location;
   const weatherProperty = weatherResponse.current;
+  const date = parseString(locationProperty.localtime)[0];
+  const time = parseString(locationProperty.localtime)[1];
+  const id = reformDate(date, "");
   const currentWeatherObject = {
+    id: id,
     city: locationProperty.name,
     region: locationProperty.region ?? "",
     country: locationProperty.country,
@@ -47,9 +58,11 @@ export const createWeatherObjects = (weatherResponse) => {
     feelsLike: roundTemp(weatherProperty.feelslike_c),
     description: weatherProperty.condition.text,
     icon: weatherProperty.condition.icon,
-    date: parseString(locationProperty.localtime)[0],
-    time: parseString(locationProperty.localtime)[1],
+    date: reformDate(date, "/", true),
+    time: time,
   };
+
+  console.log(currentWeatherObject);
 
   const forecastObjectsArray = [];
   const forecastArray = weatherResponse.forecast.forecastday;
@@ -66,12 +79,16 @@ export const createWeatherObjects = (weatherResponse) => {
 
 const createForecastObject = (forecastItem) => {
   const tempProperty = forecastItem.day;
+  const id = reformDate(forecastItem.date, "");
+  const date = reformDate(forecastItem.date, "/", true);
   const forecastForDay = {
-    date: forecastItem.date,
+    id: id,
+    date: date,
     maxTemp: tempProperty.maxtemp_c,
     minTemp: tempProperty.mintemp_c,
     description: tempProperty.condition.text,
     icon: tempProperty.condition.icon,
   };
+
   return forecastForDay;
 };
