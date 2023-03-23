@@ -1,17 +1,25 @@
-import React from "react";
+const list = [
+  {
+    id: 1,
+    documents: ["Passport", "ID", "License cards", "Vaccination certificate"],
+    workItems: [
+      "MOD",
+      "MOD charger",
+      "Extra uniform",
+      "Cabin shoes",
+      "Waist coat",
+      "Cardigan",
+    ],
+    clothes: [
+      "Underwear",
+      "Socks",
+      "Sneakers",
+      "Running shoes",
+      "Running outfit",
+    ],
+    ped: ["Laptop", "Headphone", "Adaptor", "Charging cables"],
+    misc: ["Water", "Snack", "Medication bag", "Grocery bag"],
+  },
+];
 
-const DefaultList = () => {
-  return (
-    <div className="default-list default-list-container">
-      <ul className="list">
-        <li className="list-item">Underwear</li>
-        <li className="list-item">Socks</li>
-        <li className="list-item">Pants</li>
-        <li className="list-item">Cap</li>
-        <li className="list-item">Jacket</li>
-      </ul>
-    </div>
-  );
-};
-
-export default DefaultList;
+export default list;

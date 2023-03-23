@@ -25,10 +25,10 @@ const Weather = () => {
     const fetchWeatherData = async () =>
       await fetchWeather(latAndLon).then(async (res) => {
         const WeatherResponse = await res.json();
-        console.log(WeatherResponse);
+        // console.log(WeatherResponse);
 
-        currentWeatherObject = createCurrentWeatherObject(WeatherResponse);
-        forecastObject = createForecastObject(WeatherResponse.forecast);
+        [currentWeatherObject, forecastObject] =
+          createCurrentWeatherObject(WeatherResponse);
 
         dispatch(checkWeather(currentWeatherObject));
         dispatch(checkForecast(forecastObject));
@@ -50,7 +50,6 @@ const Weather = () => {
   return (
     <div className="weather-container">
       {currentWeatherState ? (
-        // <p> Current weather is loaded</p>
         <WeatherCard props={currentWeatherState} />
       ) : (
         <p> Loading current weather... </p>

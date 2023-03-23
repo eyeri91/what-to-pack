@@ -36,9 +36,9 @@ export const roundTemp = (temp) => {
   return Math.round(temperature);
 };
 
-export const createCurrentWeatherObject = (currentWeatherInfo) => {
-  const locationProperty = currentWeatherInfo.location;
-  const weatherProperty = currentWeatherInfo.current;
+export const createCurrentWeatherObject = (weatherResponse) => {
+  const locationProperty = weatherResponse.location;
+  const weatherProperty = weatherResponse.current;
   const currentWeatherObject = {
     city: locationProperty.name,
     region: locationProperty.region ?? "",
@@ -51,27 +51,47 @@ export const createCurrentWeatherObject = (currentWeatherInfo) => {
     time: parseString(locationProperty.localtime)[1],
   };
 
-  return currentWeatherObject;
-};
-
-export const createForecastObject = (forecastInfo) => {
-  // const forecastProperty = forecastInfo.forcastday;
+  const forecastProperty = weatherResponse.forecast.forcastday;
   // date=forecastProperty[0].date
   // timeProperty = forecastProperty[0].astro.sunrise (or sunset)
-  // tempProperty = forecastProperty[0].day
+  const tempProperty = forecastProperty[0].day;
   // maxTemp = tempProperty.maxtemp_c;
   // minTemp = tempProperty.mintemp_c;
-  // description = tempProperty.condition.text
+  // description = tempProperty.condition.text;
   // icon = tempProperty.condition.icon
 
   const forecastObject = {
-    date: "",
+    date: forecastProperty[0].date,
     // sunrise:"",
     // sunset:"",
-    maxTemp: "",
-    minTemp: "",
-    description: "",
-    icom: "",
+    maxTemp: tempProperty.maxtemp_c,
+    minTemp: tempProperty.mintemp_c,
+    description: tempProperty.condition.text,
+    icon: tempProperty.condition.icon,
   };
-  return forecastObject;
+
+  return [currentWeatherObject, forecastObject];
 };
+
+// export const createForecastObject = (weatherResponse) => {
+//   const forecastProperty = weatherResponse.forecast.forcastday;
+//   console.log(weatherResponse);
+//   // date=forecastProperty[0].date
+//   // timeProperty = forecastProperty[0].astro.sunrise (or sunset)
+//   const tempProperty = forecastProperty[0].day;
+//   // maxTemp = tempProperty.maxtemp_c;
+//   // minTemp = tempProperty.mintemp_c;
+//   // description = tempProperty.condition.text;
+//   // icon = tempProperty.condition.icon
+
+//   const forecastObject = {
+//     date: forecastProperty[0].date,
+//     // sunrise:"",
+//     // sunset:"",
+//     maxTemp: tempProperty.maxtemp_c,
+//     minTemp: tempProperty.mintemp_c,
+//     description: tempProperty.condition.text,
+//     icon: tempProperty.condition.icon,
+//   };
+//   return forecastObject;
+// };
