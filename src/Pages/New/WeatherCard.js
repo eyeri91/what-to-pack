@@ -21,7 +21,7 @@ const WeatherCard = ({ props }) => {
       <div
         id="panelsStayOpen-collapseOne"
         class="accordion-collapse collapse show"
-        data-bs-parent="#accordionExample"
+        data-bs-parent="#weatherAccordion"
       >
         <div class="accordion-body">
           <h1>{`${props.region || props.city}, ${props.country}`}</h1>

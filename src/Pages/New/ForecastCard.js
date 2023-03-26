@@ -8,17 +8,17 @@ const ForecastCard = ({ props }) => {
           class="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target={`#panelsStayOpen-${props.id}`}
+          data-bs-target={`#${props.id}`}
           aria-expanded="false"
-          aria-controls={`panelsStayOpen-${props.id}`}
+          aria-controls={props.id}
         >
           {props.date}
         </button>
       </h2>
       <div
-        id={`panelsStayOpen-${props.id}`}
+        id={props.id}
         class="accordion-collapse collapse"
-        data-bs-parent="#accordionExample"
+        data-bs-parent="#weatherAccordion"
       >
         <div class="accordion-body">
           <h1>

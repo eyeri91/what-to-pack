@@ -44,10 +44,7 @@ const Weather = () => {
   );
 
   return (
-    <div
-      className="weather-container accordion"
-      id="accordionPanelsStayOpenExample"
-    >
+    <div className="weather-container accordion" id="weatherAccordion">
       {currentWeatherState ? (
         <WeatherCard props={currentWeatherState} />
       ) : (
