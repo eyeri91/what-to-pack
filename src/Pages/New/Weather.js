@@ -44,7 +44,10 @@ const Weather = () => {
   );
 
   return (
-    <div className="weather-container accordion" id="weatherAccordion">
+    <div
+      className="weather-container accordion accordion-flush"
+      id="weatherAccordion"
+    >
       {currentWeatherState ? (
         <WeatherCard props={currentWeatherState} />
       ) : (
