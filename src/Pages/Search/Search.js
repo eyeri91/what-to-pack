@@ -13,18 +13,20 @@ function Search() {
     locationObject = parseLocationObject(searchInput);
   };
   return (
-    <div className="search">
-      <SearchForm onSearchChange={handleOnSearchChange} />
-      <button
-        type="submit"
-        className="btn btn-sm btn-primary"
-        onClick={() => {
-          dispatch(getLocation(locationObject));
-          navigate("/new");
-        }}
-      >
-        Let's go!
-      </button>
+    <div className="search card">
+      <div class="card-body">
+        <SearchForm onSearchChange={handleOnSearchChange} />
+        <button
+          type="submit"
+          className="btn btn-sm btn-primary mt-2"
+          onClick={() => {
+            dispatch(getLocation(locationObject));
+            navigate("/new");
+          }}
+        >
+          Let's go!
+        </button>
+      </div>
     </div>
   );
 }
