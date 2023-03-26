@@ -1,9 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
-const Title = () => {
-  const location = useSelector((state) => state.weather.weather);
-
-  return <h1>{`${location.region ?? location.city} ${location.country}`}</h1>;
+const Title = ({ props }) => {
+  return <h1>{`${props.region || props.city}, ${props.country}`}</h1>;
 };
 export default Title;

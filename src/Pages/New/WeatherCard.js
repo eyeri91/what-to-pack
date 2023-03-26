@@ -24,7 +24,6 @@ const WeatherCard = ({ props }) => {
         data-bs-parent="#weatherAccordion"
       >
         <div class="accordion-body">
-          <h1>{`${props.region || props.city}, ${props.country}`}</h1>
           <h3>
             {props.date}, {props.time}
           </h3>

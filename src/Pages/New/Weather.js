@@ -4,6 +4,7 @@ import { checkWeather } from "../../redux/currentWeatherSlice";
 import { checkForecast } from "../../redux/forecastCheckSlice";
 import { setLatAndLon, fetchWeather } from "../../services/WeatherAPI";
 import { createWeatherObjects } from "../../utils/utils";
+import Title from "./Title";
 import WeatherCard from "./WeatherCard";
 import ForecastCard from "./ForecastCard";
 
@@ -48,6 +49,7 @@ const Weather = () => {
       className="weather-container accordion accordion-flush"
       id="weatherAccordion"
     >
+      <Title props={currentWeatherState} />
       {currentWeatherState ? (
         <WeatherCard props={currentWeatherState} />
       ) : (
