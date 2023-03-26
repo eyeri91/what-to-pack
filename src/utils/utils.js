@@ -62,7 +62,7 @@ export const createWeatherObjects = (weatherResponse) => {
     time: time,
   };
 
-  console.log(currentWeatherObject);
+  // console.log(currentWeatherObject);
 
   const forecastObjectsArray = [];
   const forecastArray = weatherResponse.forecast.forecastday;
