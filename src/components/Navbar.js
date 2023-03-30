@@ -9,7 +9,7 @@ function Navbar() {
     //   <Link to="/search">NEW TRIP</Link>
     //   <Link to="/saved"> SAVED</Link>
     // </nav>
-    <nav className="navbar navbar-expand-lg navbar-custom">
+    <nav className="navbar navbar-expand-lg custom-light">
       <div className="container-fluid">
         {/* <a className="navbar-brand" href="#"></a> */}
         <button
