@@ -9,7 +9,7 @@ function Navbar() {
     //   <Link to="/search">NEW TRIP</Link>
     //   <Link to="/saved"> SAVED</Link>
     // </nav>
-    <nav className="navbar navbar-custom navbar-expand-lg">
+    <nav className="navbar navbar-expand-lg navbar-custom">
       <div className="container-fluid">
         {/* <a className="navbar-brand" href="#"></a> */}
         <button
@@ -24,8 +24,8 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
-            <Link to="/" className="nav-link">
+          <div className="navbar-nav ">
+            <Link to="/" className="nav-link point-text">
               HOME
             </Link>
             <Link to="/search" className="nav-link">
