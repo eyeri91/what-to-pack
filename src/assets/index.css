@@ -55,6 +55,32 @@ code {
 }
 
 .start-btn {
+  background-color: var(--save-button);
+  padding: 1px 10px;
+  width: 10rem;
+  border-radius: 10px;
   color: var(--point-text);
   font-size: 1.7rem;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.start-btn:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  right: -10px;
+  transition: 0.5s;
+}
+
+.start-btn:hover {
+  padding-right: 34px;
+  padding-left: 8px;
+}
+
+.start-btn:hover:after {
+  opacity: 1;
+  right: 10px;
 }

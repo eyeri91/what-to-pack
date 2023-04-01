@@ -9,7 +9,7 @@ function Home() {
       <h1 className="home_heading point-text">What To Pack?!</h1>
       <img src={TicketImg} alt="A flight ticket" className="ticket-img" />
       <button
-        className="start-btn reset-btn"
+        className="reset-btn start-btn"
         onClick={() => {
           navigate("/search");
         }}
