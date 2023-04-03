@@ -5,9 +5,9 @@ import React from "react";
 const WeatherCard = ({ props }) => {
   return (
     <div className="weather-card accordion-item">
-      <h2 class="accordion-header">
+      <h2 className="accordion-header">
         <button
-          class="accordion-button"
+          className="accordion-button"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#panelsStayOpen-collapseOne"
@@ -20,10 +20,10 @@ const WeatherCard = ({ props }) => {
 
       <div
         id="panelsStayOpen-collapseOne"
-        class="accordion-collapse collapse show"
+        className="accordion-collapse collapse show"
         data-bs-parent="#weatherAccordion"
       >
-        <div class="accordion-body">
+        <div className="accordion-body">
           <h3>
             {props.date}, {props.time}
           </h3>

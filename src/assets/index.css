@@ -106,3 +106,10 @@ code {
   font-weight: bold;
   color: var(--point-text);
 }
+
+/* New - weather  */
+
+.weather-container {
+  width: 60vw;
+  max-width: 500px;
+}

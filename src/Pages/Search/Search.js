@@ -13,7 +13,7 @@ function Search() {
     locationObject = parseLocationObject(searchInput);
   };
   return (
-    <div className="search vh-100 d-flex justify-content-center align-items-center">
+    <div className="search  d-flex justify-content-center align-items-center">
       <div className="card search-card search-card-custom-bg border-light px-4 pt-4">
         <div className="search-card_body d-flex flex-column">
           <SearchForm onSearchChange={handleOnSearchChange} />

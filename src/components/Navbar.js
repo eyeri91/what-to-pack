@@ -4,12 +4,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    // <nav className="nav">
-    //   <Link to="/">HOME </Link>
-    //   <Link to="/search">NEW TRIP</Link>
-    //   <Link to="/saved"> SAVED</Link>
-    // </nav>
-    <nav className="navbar navbar-expand-lg custom-light">
+    <nav className="navbar navbar-expand-lg custom-light mb-5">
       <div className="container-fluid">
         {/* <a className="navbar-brand" href="#"></a> */}
         <button

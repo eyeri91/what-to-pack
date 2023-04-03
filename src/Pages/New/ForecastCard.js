@@ -3,9 +3,9 @@ import React from "react";
 const ForecastCard = ({ props }) => {
   return (
     <div className="forecast-card accordion-item">
-      <h2 class="accordion-header">
+      <h2 className="accordion-header">
         <button
-          class="accordion-button collapsed"
+          className="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={`#${props.id}`}
@@ -17,7 +17,7 @@ const ForecastCard = ({ props }) => {
       </h2>
       <div
         id={props.id}
-        class="accordion-collapse collapse"
+        className="accordion-collapse collapse"
         data-bs-parent="#weatherAccordion"
       >
         <div class="accordion-body">
