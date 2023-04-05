@@ -1,76 +1,43 @@
-# Getting Started with Create React App
+# What To Pack?!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/61aa5294-7ef4-4d3d-978c-b61c9ac5fe4e/deploy-status)](https://app.netlify.com/sites/enchord/deploys) -->
 
-## Available Scripts
+Are you tired of the repetitive and tedious process of packing for different climates every two days as a flight attendant? Look no further than this all-in-one packing app,**What To Pack?!**!
 
-In the project directory, you can run:
+Say goodbye to the hassle of opening multiple apps to check weather and take notes. **WTP** streamlines the process by combining a weather app and a note, providing you with a must-carry item list as well as some recommendations for your next destination in just one click. Save time and energy while staying organized with our cabin crew-friendly packing app.
 
-### `npm start`
+## Table of contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. [How it works](#how-it-works)
+2. [Why WTP was built](#why-wtp-was-built)
+3. [How What To Pack?! was built](#how-what-to-pack-was-built)
+4. [Future features](#future-features)
+5. [Development](#development)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How it works
 
-### `npm test`
+## Why WTP was built?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Although packing became a daily routine as cabin crew, It still feels tedious and time consuming. I have always thought that I could shorten this process. What if there was an app where a user can check the forecast of a destination, get a default item list the user saved and also suggestions for weather specific items at one go? This is why I decided to build this app, to "automate boring things".
 
-### `npm run build`
+## How WTP was built
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Design planning with Figma.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After having an rough idea to build **WTP**, I used Figma to design how the app should look.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![WTP design](src/assets/figmaForWTP.png)
 
-### `npm run eject`
+## Future features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Auto suggestions for different climate:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After checking the minimum and maximum temperature of the destination, **WTP** can give you some recommendations to pack. For instance, it the minimum temperature was below 0 °C, items like winter jackets, gloves and a knitted hat will be added to your clothing list.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Change of a default item list:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+It is surely not that it is only the cabin crew who travel often. There will be a new feature to edit a default item list so that anyone who goes on a short trip, such as businessmen and tour guides, can utilize the app.
 
-## Learn More
+### Auto suggestion for diffrent weather:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-<!--
-
-Earth picture by Nasa :
-https://unsplash.com/photos/vhSz50AaFAs
- -->
+## Development
