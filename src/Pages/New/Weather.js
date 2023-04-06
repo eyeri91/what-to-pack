@@ -4,7 +4,7 @@ import { checkWeather } from "../../redux/currentWeatherSlice";
 import { checkForecast } from "../../redux/forecastCheckSlice";
 import { setLatAndLon, fetchWeather } from "../../services/WeatherAPI";
 import { createWeatherObjects } from "../../utils/utils";
-// import Title from "./Title";
+
 import WeatherCard from "./WeatherCard";
 import ForecastCard from "./ForecastCard";
 
@@ -43,14 +43,6 @@ const Weather = () => {
     shallowEqual
   );
 
-  // const forecastCard = forecastState.map((day) => <ForecastCard props={day} />);
-  const titleAndWeatherCards = (
-    <>
-      {/* <Title props={currentWeatherState} /> */}
-      <WeatherCard props={currentWeatherState} />
-    </>
-  );
-
   const glowingPlaceholder = (
     <div className="data-loading-card">
       <h5 className="card-title placeholder-glow text-center mb-3">
@@ -67,7 +59,11 @@ const Weather = () => {
       className="weather-container accordion accordion-flush mt-5 "
       id="weatherAccordion"
     >
-      {currentWeatherState ? titleAndWeatherCards : glowingPlaceholder}
+      {currentWeatherState ? (
+        <WeatherCard props={currentWeatherState} />
+      ) : (
+        glowingPlaceholder
+      )}
       {forecastState ? (
         forecastState.map((day) => <ForecastCard props={day} />)
       ) : (
