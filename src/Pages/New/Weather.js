@@ -23,7 +23,6 @@ const Weather = () => {
     const fetchWeatherData = async () =>
       await fetchWeather(latAndLon).then(async (res) => {
         const WeatherResponse = await res.json();
-
         [currentWeatherObject, forecastObjectsArray] =
           createWeatherObjects(WeatherResponse);
 

@@ -3,11 +3,16 @@ import React from "react";
 
 const Title = ({ props }) => {
   return (
-    <div className="title">
-      <h1 className="title-city display-4 text-center">{`${
+    <div className="title text-center">
+      <img src={props.icon} className="weather-icon" alt="weather-icon" />
+      <h1 className="title-city display-5">{`${
         props.region || props.city
       }`}</h1>
-      <h6 className="title-country text-center">{` ${props.country}`}</h6>
+      <h1 className="title-temperature display-1">
+        {props.currentTemp}
+        <span className="fw-lighter">°</span>
+      </h1>
+      <h6 className="title-country text-center fw-light">{` ${props.country}`}</h6>
     </div>
   );
 };

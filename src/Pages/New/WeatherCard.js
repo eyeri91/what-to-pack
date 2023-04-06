@@ -27,11 +27,7 @@ const WeatherCard = ({ props }) => {
           <h3>
             {props.date}, {props.time}
           </h3>
-          <h3>Current Temperature: {props.currentTemp}</h3>
           <h3>Feels like: {props.feelsLike}</h3>
-          <p>
-            Description: {props.description}, Icon: {props.icon}
-          </p>
         </div>
       </div>
     </div>

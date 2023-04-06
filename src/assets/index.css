@@ -113,3 +113,7 @@ code {
   width: 60vw;
   max-width: 500px;
 }
+
+.title > * {
+  color: var(--text);
+}
