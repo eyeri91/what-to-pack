@@ -4,7 +4,7 @@ import { checkWeather } from "../../redux/currentWeatherSlice";
 import { checkForecast } from "../../redux/forecastCheckSlice";
 import { setLatAndLon, fetchWeather } from "../../services/WeatherAPI";
 import { createWeatherObjects } from "../../utils/utils";
-import Title from "./Title";
+// import Title from "./Title";
 import WeatherCard from "./WeatherCard";
 import ForecastCard from "./ForecastCard";
 
@@ -46,7 +46,7 @@ const Weather = () => {
   // const forecastCard = forecastState.map((day) => <ForecastCard props={day} />);
   const titleAndWeatherCards = (
     <>
-      <Title props={currentWeatherState} />
+      {/* <Title props={currentWeatherState} /> */}
       <WeatherCard props={currentWeatherState} />
     </>
   );

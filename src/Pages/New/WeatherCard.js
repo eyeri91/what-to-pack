@@ -1,4 +1,5 @@
 import React from "react";
+import Title from "./Title";
 
 // import { useSelector } from "react-redux";
 
@@ -24,10 +25,12 @@ const WeatherCard = ({ props }) => {
         data-bs-parent="#weatherAccordion"
       >
         <div className="accordion-body">
-          <h3>
-            {props.date}, {props.time}
-          </h3>
-          <h3>Feels like: {props.feelsLike}</h3>
+          <span className="weather-date fw-lighter me-2">{props.date}</span>
+          <span className="weather-time fw-lighter">{props.time}</span>
+          <Title props={props} />
+          <p className="weather-feelslike fw-lighter text-end mt-3 mb-0">
+            feels like: {props.feelsLike}°
+          </p>
         </div>
       </div>
     </div>
