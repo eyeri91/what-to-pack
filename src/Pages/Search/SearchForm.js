@@ -30,9 +30,10 @@ export default function SearchForm({ onSearchChange }) {
   };
 
   return (
-    <div>
+    <div className="search-body_form">
+      <h4 className="card-title mb-4 fw-light">Where are you flying?</h4>
       <AsyncPaginate
-        placeholder="Where are you going?"
+        placeholder="Seoul"
         debounceTimeout={600}
         value={location}
         onChange={handleOnChange}

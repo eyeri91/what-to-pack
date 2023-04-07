@@ -4,6 +4,7 @@ import { checkWeather } from "../../redux/currentWeatherSlice";
 import { checkForecast } from "../../redux/forecastCheckSlice";
 import { setLatAndLon, fetchWeather } from "../../services/WeatherAPI";
 import { createWeatherObjects } from "../../utils/utils";
+
 import WeatherCard from "./WeatherCard";
 import ForecastCard from "./ForecastCard";
 
@@ -22,7 +23,6 @@ const Weather = () => {
     const fetchWeatherData = async () =>
       await fetchWeather(latAndLon).then(async (res) => {
         const WeatherResponse = await res.json();
-
         [currentWeatherObject, forecastObjectsArray] =
           createWeatherObjects(WeatherResponse);
 
@@ -43,18 +43,33 @@ const Weather = () => {
     shallowEqual
   );
 
+  const glowingPlaceholder = (
+    <div className="data-loading-card">
+      <h5 className="card-title placeholder-glow text-center mb-3">
+        <span className="placeholder col-8"></span>
+      </h5>
+      <span className="placeholder col-12 bg-secondary mb-2"></span>
+      <span className="placeholder col-12 bg-secondary mb-2"></span>
+      <span className="placeholder col-12 bg-secondary mb-2"></span>
+    </div>
+  );
+
   return (
-    <div className="weather-container">
+    <div
+      className="weather-container accordion accordion-flush mt-5"
+      id="weatherAccordion"
+    >
       {currentWeatherState ? (
-        <WeatherCard props={currentWeatherState} />
+        <WeatherCard props={currentWeatherState} key={currentWeatherState.id} />
       ) : (
-        <p> Loading current weather... </p>
+        glowingPlaceholder
       )}
       {forecastState ? (
-        forecastState.map((day) => <ForecastCard props={day} />)
+        forecastState.map((day) => (
+          <ForecastCard props={day} key={forecastState.id} />
+        ))
       ) : (
-        // <ForecastCard props={forecastState} />
-        <p> Loading forecast... </p>
+        <></>
       )}
     </div>
   );

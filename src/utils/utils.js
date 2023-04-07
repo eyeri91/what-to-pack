@@ -62,7 +62,7 @@ export const createWeatherObjects = (weatherResponse) => {
     time: time,
   };
 
-  console.log(currentWeatherObject);
+  // console.log(currentWeatherObject);
 
   const forecastObjectsArray = [];
   const forecastArray = weatherResponse.forecast.forecastday;
@@ -79,7 +79,7 @@ export const createWeatherObjects = (weatherResponse) => {
 
 const createForecastObject = (forecastItem) => {
   const tempProperty = forecastItem.day;
-  const id = reformDate(forecastItem.date, "");
+  const id = `f${reformDate(forecastItem.date, "")}`;
   const date = reformDate(forecastItem.date, "/", true);
   const forecastForDay = {
     id: id,

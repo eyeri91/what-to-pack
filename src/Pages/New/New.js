@@ -9,7 +9,7 @@ function New() {
   const weatherState = useSelector((state) => state.weather.weather);
 
   return (
-    <div className="new-list">
+    <div className="new-list d-flex flex-column justify-content-center align-items-center flex-md-row justify-content-md-evenly">
       {locationState ? <Weather /> : <p> Weather is not available</p>}
       {weatherState && <PackingList />}
     </div>

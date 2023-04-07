@@ -5,8 +5,8 @@ function Saved() {
   let navigate = useNavigate();
   let { tripName } = useParams();
   return (
-    <div className="saved">
-      THIS IS SAVED {tripName && `page for ${tripName}`}
+    <div className="saved d-flex justify-content-center align-items-center">
+      The list is empty! {tripName && `page for ${tripName}`}
       {tripName && (
         <button
           onClick={() => {

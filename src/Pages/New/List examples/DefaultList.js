@@ -1,11 +1,19 @@
 const list = [
   {
-    id: 1,
-    documents: ["Passport", "ID", "License cards", "Vaccination certificate"],
+    id: 0,
+    documents: [
+      "Passport",
+      "ID",
+      "Flying license",
+      "GCAA license",
+      "Vaccination booklet",
+      "Vaccination certificate",
+    ],
     workItems: [
       "MOD",
       "MOD charger",
-      "Extra uniform",
+      "One device",
+      "Extra uniform items",
       "Cabin shoes",
       "Waist coat",
       "Cardigan",

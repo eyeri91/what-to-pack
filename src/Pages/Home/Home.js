@@ -1,19 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import earth from "../../assets/earth-big.jpg";
+import TicketImg from "../../assets/ticket.svg";
 
 function Home() {
   let navigate = useNavigate();
   return (
-    <div className="home">
-      <img
-        src={earth}
-        alt="Earth"
-        className="img-fluid
-      "
-      />
+    <div className="home home-container container-fluid d-flex flex-column justify-content-center align-items-center">
+      <h1 className="home_heading point-text">What To Pack?!</h1>
+      <img src={TicketImg} alt="A flight ticket" className="ticket-img" />
       <button
-        className="btn btn-sm btn-primary"
+        className="reset-btn start-btn"
         onClick={() => {
           navigate("/search");
         }}
