@@ -110,11 +110,12 @@ code {
 /* New - weather  */
 
 .weather-container {
-  width: 60vw;
-  max-width: 500px;
+  width: 70vw;
+  max-width: 400px;
 }
 
-.title > * {
+.title > *,
+.packing-list_heading {
   color: var(--text);
 }
 
