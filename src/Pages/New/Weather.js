@@ -60,12 +60,14 @@ const Weather = () => {
       id="weatherAccordion"
     >
       {currentWeatherState ? (
-        <WeatherCard props={currentWeatherState} />
+        <WeatherCard props={currentWeatherState} key={currentWeatherState.id} />
       ) : (
         glowingPlaceholder
       )}
       {forecastState ? (
-        forecastState.map((day) => <ForecastCard props={day} />)
+        forecastState.map((day) => (
+          <ForecastCard props={day} key={forecastState.id} />
+        ))
       ) : (
         <></>
       )}
