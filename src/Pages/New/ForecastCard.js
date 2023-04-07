@@ -3,7 +3,7 @@ import React from "react";
 const ForecastCard = ({ props }) => {
   return (
     <div className="forecast-card accordion-item">
-      <h2 className="accordion-header forecast-card_header">
+      <h2 className="accordion-header">
         <button
           className="accordion-button collapsed"
           type="button"
