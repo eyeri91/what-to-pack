@@ -65,9 +65,7 @@ const Weather = () => {
         glowingPlaceholder
       )}
       {forecastState ? (
-        forecastState.map((day) => (
-          <ForecastCard props={day} key={forecastState.id} />
-        ))
+        forecastState.map((day) => <ForecastCard props={day} key={day.id} />)
       ) : (
         <></>
       )}
