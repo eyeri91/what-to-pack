@@ -2,7 +2,7 @@ import React from "react";
 // import Title from "./Title";
 import Weather from "./Weather";
 import { useSelector } from "react-redux";
-import PackingList from "./PackingList";
+import PackingList from "./PackingList/PackingList";
 
 function New() {
   const locationState = useSelector((state) => state.locator.location);

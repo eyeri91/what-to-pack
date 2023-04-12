@@ -48,7 +48,7 @@ export const createWeatherObjects = (weatherResponse) => {
   const weatherProperty = weatherResponse.current;
   const date = parseString(locationProperty.localtime)[0];
   const time = parseString(locationProperty.localtime)[1];
-  const id = reformDate(date, "");
+  const id = `f${reformDate(date, "")}`;
   const currentWeatherObject = {
     id: id,
     city: locationProperty.name,
