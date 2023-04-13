@@ -1,3 +1,5 @@
+// export const capitalize
+
 export const parseString = (string, parseMethod = " ") => {
   const parsedStrings = string.split(parseMethod);
   return parsedStrings;

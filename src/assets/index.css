@@ -109,6 +109,12 @@ code {
 
 /* New - weather  */
 
+.heading {
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
 .weather-container {
   width: 70vw;
   max-width: 400px;
@@ -116,6 +122,19 @@ code {
 
 .title > *,
 .packing-list_heading {
+  color: var(--text);
+}
+
+.category-btn {
+  background-color: var(--light);
+  width: 10rem;
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.packing-item {
   color: var(--text);
 }
 
