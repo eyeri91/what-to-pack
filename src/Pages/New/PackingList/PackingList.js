@@ -1,11 +1,5 @@
 import React from "react";
 import PackingAccordion from "./PackingAccordion";
-import defaultList from "./defaultList";
-
-// Add keys of default list object to an array except 'id' property
-const keysForDefaultListObject = Object.keys(defaultList);
-keysForDefaultListObject.splice(0, 1);
-
 const PackingList = () => {
   return (
     <div className="packing-list mt-5 mt-md-5 align-self-md-start">

@@ -1,39 +1,37 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
+import basicList from "./basicList";
 
-const categoryId = uuidv4();
-const PackingCategory = ({ props }) => {
+const PackingAccordion = () => {
   return (
-    <div className="accordion-item packing-category">
-      <h2 className="accordion-header">
-        <button
-          className="accordion-button"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target={`#${categoryId}`}
-          aria-expanded="false"
-          aria-controls={categoryId}
-        >
-          Category
-        </button>
-      </h2>
-      <div
-        id={categoryId}
-        className="accordion-collapse collapse"
-        data-bs-parent="#accordionFlushExample"
-      >
-        <div className="accordion-body packing-items">
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">An item</li>
-            <li className="list-group-item">A second item</li>
-            <li className="list-group-item">A third item</li>
-            <li className="list-group-item">A fourth item</li>
-            <li className="list-group-item">And a fifth one</li>
-          </ul>
-        </div>
-      </div>
+    <div className="category-container">
+      {basicList.map((listCategory) => {
+        for (const [category, items] of Object.entries(listCategory)) {
+          return (
+            <div className="category">
+              <button
+                className="btn btn-light"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target={`#${category}`}
+                aria-expanded="false"
+                aria-controls={`${category}`}
+              >
+                {category}
+              </button>
+              <div className="collapse" id={`${category}`}>
+                <ul className="list-group list-group-flush">
+                  {items.map((item) => {
+                    return <li className="list-group-item">{item}</li>;
+                  })}
+                </ul>
+              </div>
+            </div>
+          );
+        }
+        return null;
+      })}
     </div>
   );
 };
 
-export default PackingCategory;
+export default PackingAccordion;
