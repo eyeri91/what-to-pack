@@ -1,4 +1,7 @@
-// export const capitalize
+export const capitalizeFirstChar = (string) => {
+  const newString = string.slice(0, 1).toUpperCase() + string.slice(1);
+  return newString;
+};
 
 export const parseString = (string, parseMethod = " ") => {
   const parsedStrings = string.split(parseMethod);

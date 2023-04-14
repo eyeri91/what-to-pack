@@ -1,8 +1,13 @@
 import React from "react";
 import basicList from "./basicList";
+import { capitalizeFirstChar } from "../../../utils/utils";
 import { v4 as uuidv4 } from "uuid";
 
 const PackingAccordion = () => {
+  // set list state whenever + or - button gets clicked in list item or category
+  // Create a function to remove category key or value in basicList
+  // useEffect -> when any + or - button gets clicked-> trigger setListState.
+  // When Save button clicked-> save the current state
   return (
     <div className="category-container" key={`${basicList}`}>
       {basicList.map((listCategory) => {
@@ -17,7 +22,7 @@ const PackingAccordion = () => {
                 aria-expanded="false"
                 aria-controls={`${category}`}
               >
-                {category}
+                {capitalizeFirstChar(category)}
               </button>
               <div className="collapse" id={`${category}`}>
                 <ul className="list-group list-group-flush packing-list">

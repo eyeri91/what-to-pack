@@ -29,7 +29,7 @@ const list = [
       "Running outfit",
     ],
   },
-  { ped: ["Laptop", "Headphone", "Adaptor", "Charging cables"] },
+  { electronics: ["Laptop", "Headphone", "Adaptor", "Charging cables"] },
   { misc: ["Water", "Snack", "Medication bag", "Grocery bag"] },
 ];
 
