@@ -3,7 +3,7 @@ import basicList from "./basicList";
 import { capitalizeFirstChar } from "../../../utils/utils";
 import { v4 as uuidv4 } from "uuid";
 
-const PackingAccordion = () => {
+const ListContainer = () => {
   // set list state whenever + or - button gets clicked in list item or category
   // Create a function to remove category key or value in basicList
   // useEffect -> when any + or - button gets clicked-> trigger setListState.
@@ -19,12 +19,12 @@ const PackingAccordion = () => {
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target={`#${category}`}
-                aria-expanded="false"
+                aria-expanded="true"
                 aria-controls={`${category}`}
               >
                 {capitalizeFirstChar(category)}
               </button>
-              <div className="collapse" id={`${category}`}>
+              <div className={"collapse"} id={`${category}`}>
                 <ul className="list-group list-group-flush packing-list">
                   {items.map((item) => {
                     return (
@@ -41,11 +41,10 @@ const PackingAccordion = () => {
             </div>
           );
         }
-
         return null;
       })}
     </div>
   );
 };
 
-export default PackingAccordion;
+export default ListContainer;
