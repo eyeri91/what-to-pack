@@ -4,6 +4,27 @@ import { capitalizeFirstChar } from "../../../utils/utils";
 import { v4 as uuidv4 } from "uuid";
 
 const ListContainer = () => {
+  // const addItem =
+  const deleteItem = (e) => {
+    console.log(e.target);
+  };
+  // const addCategory =
+  // const deleteCategory=
+
+  // const addItemBtn = <button className="reset-btn">+</button>;
+  const DeleteItemBtn = (props) => (
+    <button
+      onClick={deleteItem}
+      className="reset-btn delete-item-btn"
+      id={props.itemKey}
+    >
+      -
+    </button>
+  );
+  // const addCategoryBtn
+  // const deleteCategoryBtn
+
+  //
   // set list state whenever + or - button gets clicked in list item or category
   // Create a function to remove category key or value in basicList
   // useEffect -> when any + or - button gets clicked-> trigger setListState.
@@ -24,15 +45,17 @@ const ListContainer = () => {
               >
                 {capitalizeFirstChar(category)}
               </button>
-              <div className={"collapse"} id={`${category}`}>
+              <div className="collapse flex-fill" id={`${category}`}>
                 <ul className="list-group list-group-flush packing-list">
                   {items.map((item) => {
+                    const itemKey = uuidv4();
                     return (
                       <li
-                        className="list-group-item packing-item ms-2"
-                        key={uuidv4()}
+                        className="list-group-item packing-item ms-2 d-flex justify-content-between"
+                        key={itemKey}
                       >
-                        {item}
+                        <span className="me-3">{item}</span>
+                        <DeleteItemBtn itemKey={itemKey} />
                       </li>
                     );
                   })}
