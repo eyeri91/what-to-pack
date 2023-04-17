@@ -1,9 +1,10 @@
 import React from "react";
-import basicList from "./basicList";
+// import basicList from "./basicList";
 import { capitalizeFirstChar } from "../../../utils/utils";
 import { v4 as uuidv4 } from "uuid";
 
-const ListContainer = () => {
+const ListContainer = (props) => {
+  const list = props.list;
   // const addItem =
   const deleteItem = (e) => {
     console.log(e.target);
@@ -30,8 +31,8 @@ const ListContainer = () => {
   // useEffect -> when any + or - button gets clicked-> trigger setListState.
   // When Save button clicked-> save the current state
   return (
-    <div className="category-container" key={`${basicList}`}>
-      {basicList.map((listCategory) => {
+    <div className="category-container">
+      {list.map((listCategory) => {
         for (const [category, items] of Object.entries(listCategory)) {
           return (
             <div className="packing-container d-flex" key={category}>
