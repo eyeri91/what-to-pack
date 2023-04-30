@@ -13,17 +13,15 @@ import Search from "./Pages/Search/Search";
 import ErrorPage from "./Pages/Error";
 
 function App() {
-  const [list, setList] = useState(basicList);
-
   return (
     <Router>
       <Navbar />
       <Routes>
         {/* Main page */}
         <Route path="/" element={<Home />} />
-        <Route path="/new" element={<New list={list} />} />
+        <Route path="/new" element={<New />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/saved/" element={<Saved list={list} />} />
+        <Route path="/saved/" element={<Saved />} />
         <Route path="/saved/:tripName" element={<Saved />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
