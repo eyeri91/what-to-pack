@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import basicList from "../Pages/New/PackingList/basicList";
 
 export const packingListSlice = createSlice({
   name: "packingList",
   initialState: {
-    packingList: "",
+    packingList: basicList,
   },
   reducers: {
     updatePackingList: (state, action) => {

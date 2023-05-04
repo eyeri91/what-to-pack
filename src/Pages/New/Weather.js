@@ -15,8 +15,6 @@ const Weather = () => {
   const location = useSelector((state) => state.locator.location);
   latAndLon = setLatAndLon(location.lat, location.lon);
 
-  console.log("render");
-
   useEffect(() => {
     let currentWeatherObject, forecastObjectsArray;
 
