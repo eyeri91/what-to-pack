@@ -18,3 +18,10 @@ export const checkForecast = (forecastObject) => {
     payload: forecastObject,
   };
 };
+
+export const deleteListItem = (updatedCategoryObject) => {
+  return {
+    type: "DELETELISTITEM",
+    payload: updatedCategoryObject,
+  };
+};

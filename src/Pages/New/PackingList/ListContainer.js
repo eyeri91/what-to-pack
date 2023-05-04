@@ -2,7 +2,7 @@ import React from "react";
 // import basicList from "./basicList";
 import { capitalizeFirstChar } from "../../../utils/utils";
 import { useDispatch, useSelector } from "react-redux";
-// import { updatePackingList } from "../../../redux/packingListSlicer";
+import { deleteListItem } from "../../../redux/packingListSlicer";
 import { v4 as uuidv4 } from "uuid";
 
 // setState로 UI 계속 업뎃 하다가, 마지막에 세이브할때 디스패치로 리덕스 스테이트로
@@ -14,25 +14,25 @@ const ListContainer = () => {
   // const [updatedList, setUpdatedList] = useState(basicList);
   // const packingList = useSelector((state) => state.packingList.packingList);
 
-  const deleteItem = (category, item) => {
-    listState.map((categoryObject) => {
-      for (const [key, values] of Object.entries(categoryObject)) {
-        if (key !== category) {
-          continue;
-        } else {
-          values.map((value) => {
-            if (value === item) {
-              const indexOfItem = values.indexOf(item);
-              return [
-                ...values.slice(0, indexOfItem),
-                ...values.slice(indexOfItem + 1),
-              ];
-            }
-          });
-        }
-      }
-    });
-  };
+  // const deleteItem = (category, item) => {
+  //   listState.map((categoryObject) => {
+  //     for (let [key, values] of Object.entries(categoryObject)) {
+  //       if (key !== category) {
+  //         continue;
+  //       } else {
+  //         values.map((value) => {
+  //           if (value === item) {
+  //             const indexOfItem = values.indexOf(item);
+  //             const newArray = [
+  //               ...values.slice(0, indexOfItem),
+  //               ...values.slice(indexOfItem + 1),
+  //             ];
+  //           }
+  //         });
+  //       }
+  //     }
+  //   });
+  // };
 
   // const addCategory =
   // const deleteCategory=
@@ -40,7 +40,14 @@ const ListContainer = () => {
   // const addItemBtn = <button className="reset-btn">+</button>;
   const DeleteItemBtn = (props) => (
     <button
-      onClick={() => deleteItem(props.category, props.item)}
+      onClick={() => {
+        dispatch(
+          deleteListItem({
+            category: props.category,
+            item: props.item,
+          })
+        );
+      }}
       className="reset-btn delete-item-btn"
       id={props.id}
     >
