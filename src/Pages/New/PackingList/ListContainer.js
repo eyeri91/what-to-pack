@@ -1,38 +1,12 @@
 import React from "react";
-// import basicList from "./basicList";
 import { capitalizeFirstChar } from "../../../utils/utils";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteListItem } from "../../../redux/packingListSlicer";
+import { deleteListItem } from "../../../redux/packingListSlice";
 import { v4 as uuidv4 } from "uuid";
-
-// setState로 UI 계속 업뎃 하다가, 마지막에 세이브할때 디스패치로 리덕스 스테이트로
 
 const ListContainer = () => {
   const dispatch = useDispatch();
-  // dispatch(updatePackingList(basicList));
   const listState = useSelector((state) => state.packingList.packingList);
-  // const [updatedList, setUpdatedList] = useState(basicList);
-  // const packingList = useSelector((state) => state.packingList.packingList);
-
-  // const deleteItem = (category, item) => {
-  //   listState.map((categoryObject) => {
-  //     for (let [key, values] of Object.entries(categoryObject)) {
-  //       if (key !== category) {
-  //         continue;
-  //       } else {
-  //         values.map((value) => {
-  //           if (value === item) {
-  //             const indexOfItem = values.indexOf(item);
-  //             const newArray = [
-  //               ...values.slice(0, indexOfItem),
-  //               ...values.slice(indexOfItem + 1),
-  //             ];
-  //           }
-  //         });
-  //       }
-  //     }
-  //   });
-  // };
 
   // const addCategory =
   // const deleteCategory=
@@ -57,11 +31,6 @@ const ListContainer = () => {
   // const addCategoryBtn
   // const deleteCategoryBtn
 
-  //
-  // set list state whenever + or - button gets clicked in list item or category
-  // Create a function to remove category key or value in basicList
-  // useEffect -> when any + or - button gets clicked-> trigger setListState.
-  // When Save button clicked-> save the current state
   return (
     <div className="category-container">
       {listState.map((listCategory) => {
