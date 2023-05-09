@@ -26,7 +26,7 @@ export const ListModal = (props) => {
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-footer">
+          <div className="modal-footer">
             <button
               type="button"
               className="reset-btn delete-item-btn"
