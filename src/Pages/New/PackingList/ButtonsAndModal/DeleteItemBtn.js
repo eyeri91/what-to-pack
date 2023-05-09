@@ -1,10 +1,10 @@
 import React from "react";
-import { ListModal } from "../ListModal";
+import { DeleteItemModal } from "./DeleteItemModal";
 
 export const DeleteItemBtn = (props) => {
   return (
     <>
-      <ListModal
+      <DeleteItemModal
         item={props.item}
         category={props.category}
         id={props.category + props.id}

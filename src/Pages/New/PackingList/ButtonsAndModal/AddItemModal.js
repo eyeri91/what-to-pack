@@ -1,23 +1,19 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { deleteListItem } from "../../../redux/packingListSlice";
 
-export const ListModal = (props) => {
-  const dispatch = useDispatch();
+export const AddItemModal = (props) => {
   return (
     <div
       className="modal fade"
       id={props.id}
       tabIndex="-1"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="AddItemModal"
       aria-hidden="true"
     >
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header border-bottom-0">
-            <div className="modal-title fs-5" id="exampleModalLabel">
-              Do you really want to delete
-              <span className="fw-bold"> {props.item}</span>
+            <div className="modal-title fs-5" id="AddItemModal">
+              Adding Item
             </div>
             <button
               type="button"
@@ -38,14 +34,7 @@ export const ListModal = (props) => {
               type="button"
               className="reset-btn delete-item-btn"
               data-bs-dismiss="modal"
-              onClick={() => {
-                dispatch(
-                  deleteListItem({
-                    category: props.category,
-                    item: props.item,
-                  })
-                );
-              }}
+              //   onClick={() => {}}
             >
               Yes
             </button>
