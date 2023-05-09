@@ -1,31 +1,26 @@
 import React from "react";
 import { capitalizeFirstChar } from "../../../utils/utils";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { ListModal } from "./ListModal";
-import { deleteListItem } from "../../../redux/packingListSlice";
+// import { deleteListItem } from "../../../redux/packingListSlice";
 import { v4 as uuidv4 } from "uuid";
 
 const ListContainer = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const listState = useSelector((state) => state.packingList.packingList);
 
-  // const addItemBtn = <button className="reset-btn">+</button>;
   const DeleteItemBtn = (props) => (
     <>
-      <ListModal item={props.item} id={props.id} />
+      <ListModal
+        item={props.item}
+        category={props.category}
+        id={props.category + props.id}
+      />
       <button
         type="button"
-        onClick={() => {
-          dispatch(
-            deleteListItem({
-              category: props.category,
-              item: props.item,
-            })
-          );
-        }}
         className="reset-btn delete-item-btn"
         data-bs-toggle="modal"
-        data-bs-target={`#${props.id}`}
+        data-bs-target={`#${props.category + props.id}`}
         id={props.id}
       >
         -
