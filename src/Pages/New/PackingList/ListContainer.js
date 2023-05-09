@@ -1,32 +1,12 @@
 import React from "react";
 import { capitalizeFirstChar } from "../../../utils/utils";
 import { useSelector } from "react-redux";
-import { ListModal } from "./ListModal";
-// import { deleteListItem } from "../../../redux/packingListSlice";
+import { DeleteItemBtn } from "./Buttons/DeleteItemBtn";
 import { v4 as uuidv4 } from "uuid";
 
 const ListContainer = () => {
-  // const dispatch = useDispatch();
   const listState = useSelector((state) => state.packingList.packingList);
 
-  const DeleteItemBtn = (props) => (
-    <>
-      <ListModal
-        item={props.item}
-        category={props.category}
-        id={props.category + props.id}
-      />
-      <button
-        type="button"
-        className="reset-btn delete-item-btn"
-        data-bs-toggle="modal"
-        data-bs-target={`#${props.category + props.id}`}
-        id={props.id}
-      >
-        -
-      </button>
-    </>
-  );
   // const addCategoryBtn
   // const deleteCategoryBtn
 
@@ -64,12 +44,13 @@ const ListContainer = () => {
                       </li>
                     );
                   })}
+                  <button className="reset-btn add-item-btn">+</button>
                 </ul>
               </div>
             </div>
           );
         }
-        return null;
+        return false;
       })}
     </div>
   );
