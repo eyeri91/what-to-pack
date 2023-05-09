@@ -2,7 +2,6 @@ import React from "react";
 import { AddItemModal } from "./AddItemModal";
 
 export const AddItemBtn = (props) => {
-  console.log(props);
   return (
     <>
       <AddItemModal id={props.category + props.id} category={props.category} />
