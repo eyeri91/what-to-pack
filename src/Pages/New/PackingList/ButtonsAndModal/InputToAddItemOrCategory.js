@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addListItem } from "../../../../redux/packingListSlice";
+import {
+  addListItem,
+  addListCategory,
+} from "../../../../redux/packingListSlice";
 
 export const InputToAddItemOrCategory = (props) => {
   const dispatch = useDispatch();
@@ -28,12 +31,11 @@ export const InputToAddItemOrCategory = (props) => {
         type="button"
         id="button-addon2"
         onClick={() => {
-          if (elementType === "item")
-            dispatch(
-              addListItem({ category: props.category, item: newElement })
-            );
-          else {
-          }
+          elementType === "item"
+            ? dispatch(
+                addListItem({ category: props.category, item: newElement })
+              )
+            : dispatch(addListCategory({ category: newElement, item: "" }));
         }}
       >
         Save
