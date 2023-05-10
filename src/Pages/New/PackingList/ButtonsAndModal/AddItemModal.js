@@ -17,9 +17,7 @@ export const AddItemModal = (props) => {
               elementType={"item"}
               category={props.category}
             />
-            {/* <div className="modal-title fs-5" id="AddItemModal">
-              Adding Item
-            </div> */}
+
             <button
               type="button"
               className="btn-close "
