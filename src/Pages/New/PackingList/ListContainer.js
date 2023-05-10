@@ -3,13 +3,14 @@ import { capitalizeFirstChar } from "../../../utils/utils";
 import { useSelector } from "react-redux";
 import { DeleteItemBtn } from "./ButtonsAndModal/DeleteItemBtn";
 import { AddItemBtn } from "./ButtonsAndModal/AddItemBtn";
+import { AddCategoryBtn } from "./ButtonsAndModal/AddCategoryBtn";
 import { v4 as uuidv4 } from "uuid";
 
 const ListContainer = () => {
   const listState = useSelector((state) => state.packingList.packingList);
 
   return (
-    <div className="category-container">
+    <div className="category-container d-flex flex-column">
       {listState.map((listCategory) => {
         for (const [category, items] of Object.entries(listCategory)) {
           const addBtnId = uuidv4();
@@ -51,6 +52,7 @@ const ListContainer = () => {
         }
         return false;
       })}
+      <AddCategoryBtn />
     </div>
   );
 };

@@ -4,9 +4,9 @@ import { addListItem } from "../../../../redux/packingListSlice";
 
 export const InputToAddItemOrCategory = (props) => {
   const dispatch = useDispatch();
-  const [newItem, setNewItem] = useState("");
+  const [newElement, setNewElement] = useState("");
   const handleChange = (e) => {
-    setNewItem(e.target.value);
+    setNewElement(e.target.value);
   };
   const elementType = props.elementType;
   const showDifferentPlaceHolderForDifferentElements = (elementType) => {
@@ -21,15 +21,19 @@ export const InputToAddItemOrCategory = (props) => {
         aria-label="Input to add items or categories"
         aria-describedby="button-addon2"
         onChange={handleChange}
-        value={newItem}
+        value={newElement}
       />
       <button
         className="btn btn-outline-secondary"
         type="button"
         id="button-addon2"
         onClick={() => {
-          //   console.log(newItem);
-          dispatch(addListItem({ category: props.category, item: newItem }));
+          if (elementType === "item")
+            dispatch(
+              addListItem({ category: props.category, item: newElement })
+            );
+          else {
+          }
         }}
       >
         Save

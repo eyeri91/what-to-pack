@@ -148,10 +148,15 @@ code {
   color: var(--text);
 }
 
-.add-item-btn {
+.add-item-btn,
+.add-category-btn {
   font-size: 2rem;
   font-weight: bold;
   color: var(--point-text);
+}
+
+.add-category-btn {
+  font-size: 2.5rem;
 }
 
 /* Footer */
