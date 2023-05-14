@@ -33,14 +33,7 @@ export const DeleteCategoryModal = (props) => {
           <div className="modal-footer border-top-0 pt-0">
             <button
               type="button"
-              className="reset-btn "
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button
-              type="button"
-              className="reset-btn "
+              className="reset-btn delete-confirm-btn "
               data-bs-dismiss="modal"
               onClick={() => {
                 // deleteCategory(basicList, selectedCat);
@@ -48,6 +41,13 @@ export const DeleteCategoryModal = (props) => {
               }}
             >
               Delete
+            </button>
+            <button
+              type="button"
+              className="reset-btn close-btn  "
+              data-bs-dismiss="modal"
+            >
+              Close
             </button>
           </div>
         </div>

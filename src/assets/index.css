@@ -164,5 +164,12 @@ code {
 .delete-item-btn {
   color: var(--save-button);
 }
+.close-btn {
+  color: var(--dark);
+}
+.delete-confirm-btn {
+  font-weight: bold;
+  color: var(--point-text);
+}
 
 /* Footer */
