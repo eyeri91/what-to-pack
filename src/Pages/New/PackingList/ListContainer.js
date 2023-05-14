@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { DeleteItemBtn } from "./ButtonsAndModal/DeleteItemBtn";
 import { AddItemBtn } from "./ButtonsAndModal/AddItemBtn";
 import { AddCategoryBtn } from "./ButtonsAndModal/AddCategoryBtn";
+import { DeleteCategoryBtn } from "./ButtonsAndModal/DeleteCategoryBtn";
 import { v4 as uuidv4 } from "uuid";
 
 const ListContainer = () => {
@@ -83,7 +84,10 @@ const ListContainer = () => {
         }
         return false;
       })}
-      <AddCategoryBtn />
+      <div className="category-btns d-flex justify-content-evenly ">
+        <AddCategoryBtn />
+        <DeleteCategoryBtn />
+      </div>
     </div>
   );
 };
