@@ -10,11 +10,12 @@ import { v4 as uuidv4 } from "uuid";
 
 const ListContainer = () => {
   const listState = useSelector((state) => state.packingList.packingList);
-
+  let categories = [];
   return (
     <div className="category-container d-flex flex-column">
       {listState.map((listCategory) => {
         for (const [category, items] of Object.entries(listCategory)) {
+          categories.push(category);
           const addBtnId = uuidv4();
           if (category && items) {
             return (
@@ -82,11 +83,12 @@ const ListContainer = () => {
             );
           }
         }
+
         return false;
       })}
       <div className="category-btns d-flex justify-content-evenly ">
         <AddCategoryBtn />
-        <DeleteCategoryBtn />
+        <DeleteCategoryBtn categories={categories} />
       </div>
     </div>
   );
