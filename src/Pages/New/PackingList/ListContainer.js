@@ -37,7 +37,9 @@ const ListContainer = () => {
                           className="list-group-item packing-item ms-2 d-flex justify-content-between"
                           key={item}
                         >
-                          <span className="me-3">{item}</span>
+                          <span className="me-3">
+                            {capitalizeFirstChar(item)}
+                          </span>
                           <DeleteItemBtn
                             id={itemId}
                             category={category}

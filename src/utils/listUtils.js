@@ -5,7 +5,9 @@ export const deleteItem = (list, category, item) => {
         continue;
       } else {
         const newValues = values.filter((value) => value !== item);
-        categoryObject[key] = newValues;
+        newValues.length < 1
+          ? (categoryObject[key] = "")
+          : (categoryObject[key] = newValues);
       }
     }
     return categoryObject;

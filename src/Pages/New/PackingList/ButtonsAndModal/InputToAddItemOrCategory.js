@@ -30,6 +30,7 @@ export const InputToAddItemOrCategory = (props) => {
         className="btn btn-outline-secondary"
         type="button"
         id="button-addon2"
+        data-bs-dismiss="modal"
         onClick={() => {
           elementType === "item"
             ? dispatch(
