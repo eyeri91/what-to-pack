@@ -1,14 +1,16 @@
 import React from "react";
+import { DeleteCategoryModal } from "./DeleteCategoryModal";
 
 export const DeleteCategoryBtn = () => {
+  const deleteCategoryModalId = "deleteCatModal";
   return (
     <>
-      {/* <AddCategoryModal id={addCategoryModalId} /> */}
+      <DeleteCategoryModal id={deleteCategoryModalId} />
       <button
         type="button"
         className="reset-btn delete-category-btn"
-        // data-bs-toggle="modal"
-        // data-bs-target={`#${addCategoryModalId}`}
+        data-bs-toggle="modal"
+        data-bs-target={`#${deleteCategoryModalId}`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
