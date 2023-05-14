@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+// import basicList from "../basicList";
+import { useDispatch } from "react-redux";
+// import { deleteCategory } from "../../../../utils/listUtils";
+import { deleteListCategory } from "../../../../redux/packingListSlice";
 import { SelectFormToDeleteCategory } from "./SelectFormToDeleteCategory";
 
 export const DeleteCategoryModal = (props) => {
   const [selectedCat, setSelectedCat] = useState("");
-
+  const dispatch = useDispatch();
   return (
     <div
       className="modal fade"
@@ -38,7 +42,10 @@ export const DeleteCategoryModal = (props) => {
               type="button"
               className="reset-btn "
               data-bs-dismiss="modal"
-              onClick={() => {}}
+              onClick={() => {
+                // deleteCategory(basicList, selectedCat);
+                dispatch(deleteListCategory({ category: selectedCat }));
+              }}
             >
               Delete
             </button>

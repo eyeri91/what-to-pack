@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import basicList from "../Pages/New/PackingList/basicList";
-import { deleteItem, addItem, addCategory } from "../utils/listUtils";
+import {
+  deleteItem,
+  addItem,
+  addCategory,
+  deleteCategory,
+} from "../utils/listUtils";
 
 export const packingListSlice = createSlice({
   name: "packingList",
@@ -29,10 +34,20 @@ export const packingListSlice = createSlice({
         action.payload.item
       );
     },
+    deleteListCategory: (state, action) => {
+      state.packingList = deleteCategory(
+        state.packingList,
+        action.payload.category
+      );
+    },
   },
 });
 
-export const { deleteListItem, addListItem, addListCategory } =
-  packingListSlice.actions;
+export const {
+  deleteListItem,
+  addListItem,
+  addListCategory,
+  deleteListCategory,
+} = packingListSlice.actions;
 
 export default packingListSlice.reducer;

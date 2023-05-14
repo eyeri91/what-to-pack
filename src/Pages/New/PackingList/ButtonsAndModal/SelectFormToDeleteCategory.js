@@ -5,7 +5,11 @@ export const SelectFormToDeleteCategory = (props) => {
   const categories = props.categories;
   const categoryOption = (category) => {
     const capitalizedCategory = capitalizeFirstChar(category);
-    return <option value={category}>{capitalizedCategory}</option>;
+    return (
+      <option value={category} key={category}>
+        {capitalizedCategory}
+      </option>
+    );
   };
 
   const setSelectedCat = props.onSelectChange;
@@ -19,7 +23,7 @@ export const SelectFormToDeleteCategory = (props) => {
       aria-label="Default select example"
       onChange={handleOnSelectedChange}
     >
-      <option selected>....</option>;
+      <option defaultValue>....</option>;
       {categories.map((category) => categoryOption(category))}
     </select>
   );

@@ -31,3 +31,17 @@ export const addCategory = (list, category, item) => {
   newCategoryObject[category] = item;
   return (list = [...list, newCategoryObject]);
 };
+
+export const deleteCategory = (list, category) => {
+  const updatedList = list.filter((categoryObject) => {
+    for (const key of Object.keys(categoryObject)) {
+      if (key !== category) {
+        return categoryObject;
+      } else {
+        continue;
+      }
+    }
+    return false;
+  });
+  return (list = [...updatedList]);
+};
