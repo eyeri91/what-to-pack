@@ -4,7 +4,7 @@ export const SaveCurrentListModal = (props) => {
   const weatherState = useSelector((state) => state.weather.weather);
   const forecastState = useSelector((state) => state.forecast.forecast);
   const listState = useSelector((state) => state.packingList.packingList);
-  const tripName = weatherState.id;
+  const tripName = weatherState.id + weatherState.city;
   return (
     <div
       className="modal fade"

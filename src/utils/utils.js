@@ -1,3 +1,25 @@
+export const getSavedDate = () => {
+  const months = [
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC",
+  ];
+  const today = new Date();
+  // const year = today.getFullYear();
+  const month = months[today.getMonth()];
+  const date = today.getDate();
+  return month + "/" + date;
+};
+
 export const capitalizeFirstChar = (string) => {
   const newString = string.slice(0, 1).toUpperCase() + string.slice(1);
   return newString;
