@@ -1,6 +1,10 @@
 import React from "react";
-
-export const SaveModal = (props) => {
+import { useSelector } from "react-redux";
+export const SaveCurrentListModal = (props) => {
+  const weatherState = useSelector((state) => state.weather.weather);
+  const forecastState = useSelector((state) => state.forecast.forecast);
+  const listState = useSelector((state) => state.packingList.packingList);
+  const tripName = weatherState.id;
   return (
     <div
       className="modal fade"
@@ -26,7 +30,15 @@ export const SaveModal = (props) => {
               className="reset-btn delete-confirm-btn "
               data-bs-dismiss="modal"
               onClick={() => {
-                console.log();
+                const savedTripInformationArray = [
+                  weatherState,
+                  forecastState,
+                  listState,
+                ];
+                localStorage.setItem(
+                  tripName,
+                  JSON.stringify(savedTripInformationArray)
+                );
               }}
             >
               Save
