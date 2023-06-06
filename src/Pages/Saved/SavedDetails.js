@@ -9,6 +9,7 @@ export const SavedDetails = () => {
   const { tripKey } = useParams();
   const foundTripsObject = JSON.parse(localStorage.getItem(tripKey));
   const weatherState = foundTripsObject[0];
+  weatherState.isItToday = false;
   const forecastState = foundTripsObject[1];
   const listState = foundTripsObject[2];
 

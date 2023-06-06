@@ -1,8 +1,6 @@
 import React from "react";
 import Title from "../Title";
 
-// import { useSelector } from "react-redux";
-
 const WeatherCard = ({ props }) => {
   return (
     <div className="weather-card accordion-item">
@@ -15,7 +13,7 @@ const WeatherCard = ({ props }) => {
           aria-expanded="true"
           aria-controls={"panelsStayOpen-collapseOne"}
         >
-          {props.date}
+          {props.isItToday ? "Today" : props.date}
         </button>
       </h2>
 

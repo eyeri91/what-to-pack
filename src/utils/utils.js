@@ -78,6 +78,7 @@ export const createWeatherObjects = (weatherResponse) => {
   const id = `f${reformDate(date, "")}`;
   const currentWeatherObject = {
     id: id,
+    isItToday: true,
     city: locationProperty.name,
     region: locationProperty.region ?? "",
     country: locationProperty.country,
