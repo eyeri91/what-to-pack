@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Home from "./Pages/Home/Home";
 import New from "./Pages/New/New";
 import Saved from "./Pages/Saved/Saved";
+import { SavedDetails } from "./Pages/Saved/SavedDetails";
 import Search from "./Pages/Search/Search";
 import ErrorPage from "./Pages/Error";
 
@@ -21,7 +22,7 @@ function App() {
         <Route path="/new" element={<New />} />
         <Route path="/search" element={<Search />} />
         <Route path="/saved/" element={<Saved />} />
-        <Route path="/saved/:tripName" element={<Saved />} />
+        <Route path="/saved/:tripKey" element={<SavedDetails />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

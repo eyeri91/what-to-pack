@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "./Title";
+import Title from "../Title";
 
 // import { useSelector } from "react-redux";
 
@@ -15,7 +15,7 @@ const WeatherCard = ({ props }) => {
           aria-expanded="true"
           aria-controls={"panelsStayOpen-collapseOne"}
         >
-          Today
+          {props.date}
         </button>
       </h2>
 

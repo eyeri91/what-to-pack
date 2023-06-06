@@ -7,8 +7,13 @@ function Saved() {
   const createSavedTripButtons = (keysForSavedTrips) => {
     return keysForSavedTrips.map((key) => {
       const nameOfTrip = key.substr(9);
+      const keyForTrp = key;
       return (
-        <SavedTripButton key={key} date={getSavedDate()} city={nameOfTrip} />
+        <SavedTripButton
+          tripKey={keyForTrp}
+          date={getSavedDate()}
+          city={nameOfTrip}
+        />
       );
     });
   };

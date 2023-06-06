@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
-import { checkWeather } from "../../redux/currentWeatherSlice";
-import { checkForecast } from "../../redux/forecastCheckSlice";
-import { setLatAndLon, fetchWeather } from "../../services/WeatherAPI";
-import { createWeatherObjects } from "../../utils/utils";
+import { checkWeather } from "../../../redux/currentWeatherSlice";
+import { checkForecast } from "../../../redux/forecastCheckSlice";
+import { setLatAndLon, fetchWeather } from "../../../services/WeatherAPI";
+import { createWeatherObjects } from "../../../utils/utils";
 
+import { GlowingPlaceholder } from "./GlowingPlaceholder";
 import WeatherCard from "./WeatherCard";
 import ForecastCard from "./ForecastCard";
 
@@ -41,17 +42,6 @@ const Weather = () => {
     shallowEqual
   );
 
-  const glowingPlaceholder = (
-    <div className="data-loading-card">
-      <h5 className="card-title placeholder-glow text-center mb-3">
-        <span className="placeholder col-8"></span>
-      </h5>
-      <span className="placeholder col-12 bg-secondary mb-2"></span>
-      <span className="placeholder col-12 bg-secondary mb-2"></span>
-      <span className="placeholder col-12 bg-secondary mb-2"></span>
-    </div>
-  );
-
   return (
     <div
       className="weather-container  accordion accordion-flush mt-5"
@@ -61,7 +51,7 @@ const Weather = () => {
       {currentWeatherState ? (
         <WeatherCard props={currentWeatherState} key={currentWeatherState.id} />
       ) : (
-        glowingPlaceholder
+        GlowingPlaceholder
       )}
       {forecastState ? (
         forecastState.map((day) => <ForecastCard props={day} key={day.id} />)

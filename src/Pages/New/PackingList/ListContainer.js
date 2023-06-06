@@ -1,6 +1,5 @@
 import React from "react";
 import { capitalizeFirstChar } from "../../../utils/utils";
-import { useSelector } from "react-redux";
 
 import { DeleteItemBtn } from "./ButtonsAndModal/DeleteItemBtn";
 import { AddItemBtn } from "./ButtonsAndModal/AddItemBtn";
@@ -8,8 +7,9 @@ import { AddCategoryBtn } from "./ButtonsAndModal/AddCategoryBtn";
 import { DeleteCategoryBtn } from "./ButtonsAndModal/DeleteCategoryBtn";
 import { v4 as uuidv4 } from "uuid";
 
-const ListContainer = () => {
-  const listState = useSelector((state) => state.packingList.packingList);
+const ListContainer = (props) => {
+  const listState = props.listState;
+
   let categories = [];
   return (
     <div className="category-container d-flex flex-column">
