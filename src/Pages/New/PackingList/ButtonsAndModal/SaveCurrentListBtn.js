@@ -8,25 +8,25 @@ export const SaveCurrentListBtn = () => {
       <SaveCurrentListModal id={saveListBtnId} />
       <button
         type="button"
-        className="reset-btn add-item-btn"
+        className="save-list-btn rounded reset-btn d-flex align-items-center"
         data-bs-toggle="modal"
         data-bs-target={`#${saveListBtnId}`}
         id={saveListBtnId}
       >
-        Save
-        {/* <svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width="16"
+          height="16"
           fill="currentColor"
-          className="bi bi-plus-lg"
+          className="bi bi-arrow-up me-2"
           viewBox="0 0 16 16"
         >
           <path
-            fillRule="evenodd"
-            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+            fill-rule="evenodd"
+            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
           />
-        </svg> */}
+        </svg>
+        Save this trip
       </button>
     </>
   );

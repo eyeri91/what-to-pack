@@ -167,9 +167,17 @@ code {
 .close-btn {
   color: var(--dark);
 }
+
 .delete-confirm-btn {
   font-weight: bold;
   color: var(--point-text);
+}
+
+.save-list-btn {
+  padding: 0.3rem;
+  background: var(--text);
+
+  color: var(--save-button);
 }
 
 /* Saved */
