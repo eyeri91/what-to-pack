@@ -42,7 +42,7 @@ code {
 /* Common components */
 
 .custom-light {
-  background-color: var(--light);
+  background-color: var(--bg-color);
 }
 
 .point-text {
@@ -136,7 +136,7 @@ code {
 }
 
 .category-btn {
-  background-color: var(--light);
+  background-color: var(--bg-color);
   width: 10rem;
   border-radius: 10px;
   color: var(--text);
@@ -175,9 +175,8 @@ code {
 
 .save-list-btn {
   padding: 0.3rem;
-  background: var(--text);
-
-  color: var(--save-button);
+  background: var(--);
+  color: var(--point-text);
 }
 
 /* Saved */

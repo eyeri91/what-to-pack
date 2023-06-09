@@ -12,13 +12,17 @@ Say goodbye to the hassle of opening multiple apps to check weather and take not
 4. [Future features](#future-features)
 5. [Development](#development)
 
-## How it works
+## What it does
 
 ## Why WTP was built?
 
 Although packing became a daily routine as cabin crew, It still feels tedious and time consuming. I have always thought that I could shorten this process. What if there was an app where a user can check the forecast of a destination, get a default item list the user saved and also suggestions for weather specific items at one go? This is why I decided to build this app, to "automate boring things".
 
 ## How WTP was built
+
+1. React creat app based
+2. Location API, Weather API to get data
+3. Use Redux to save all state in one store and build one way communication.
 
 ### Design planning with Figma.
 
@@ -28,14 +32,12 @@ After having an rough idea to build **WTP**, I used Figma to design how the app 
 
 ## Future features
 
-### Auto suggestions for different climate:
+### Auto suggestions for different climates and weather condition:
 
 After checking the minimum and maximum temperature of the destination, **WTP** can give you some recommendations to pack. For instance, it the minimum temperature was below 0 °C, items like winter jackets, gloves and a knitted hat will be added to your clothing list.
 
 ### Change of a default item list:
 
 It is surely not that it is only the cabin crew who travel often. There will be a new feature to edit a default item list so that anyone who goes on a short trip, such as businessmen and tour guides, can utilize the app.
-
-### Auto suggestion for diffrent weather:
 
 ## Development

@@ -1,15 +1,32 @@
 import React from "react";
-import ListContainer from "./ListContainer";
-import { SaveCurrentListBtn } from "./ButtonsAndModal/SaveCurrentListBtn";
+import { CategoryContainer } from "./CategoryContainer";
+import { AddCategoryBtn } from "./ButtonsAndModal/AddCategoryBtn";
+import { DeleteCategoryBtn } from "./ButtonsAndModal/DeleteCategoryBtn";
+import { v4 as uuidv4 } from "uuid";
 
 const PackingList = (props) => {
   const listState = props.listState;
+  let categories = [];
   return (
-    <div className="packing-list-container packing-list mt-5 mt-md-5 align-self-md-start">
-      <h3 className="packing-list_heading heading">What to pack</h3>
-      <ListContainer listState={listState} />
-      <div className="save-list-btn-container d-flex justify-content-center mt-5 mb-4 ">
-        <SaveCurrentListBtn />
+    <div className="category-container d-flex flex-column">
+      {listState.map((listCategory) => {
+        for (const [category, items] of Object.entries(listCategory)) {
+          categories.push(category);
+          const addBtnId = uuidv4();
+          return (
+            <CategoryContainer
+              category={category}
+              items={items}
+              addBtnId={addBtnId}
+            />
+          );
+        }
+
+        return false;
+      })}
+      <div className="category-btns d-flex justify-content-evenly ">
+        <AddCategoryBtn />
+        <DeleteCategoryBtn categories={categories} />
       </div>
     </div>
   );

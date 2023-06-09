@@ -2,7 +2,7 @@ import React from "react";
 import WeatherCard from "../New/WeatherComponents/WeatherCard";
 import ForecastCard from "../New/WeatherComponents/ForecastCard";
 import GlowingPlaceholder from "../New/WeatherComponents/GlowingPlaceholder";
-import PackingList from "../New/PackingList/PackingList";
+import { PackingListContainer } from "../New/PackingList/PackingListContainer";
 import { useParams } from "react-router-dom";
 
 export const SavedDetails = () => {
@@ -31,7 +31,7 @@ export const SavedDetails = () => {
           <></>
         )}
       </div>
-      <PackingList listState={listState} />
+      <PackingListContainer listState={listState} />
     </div>
   );
 };
