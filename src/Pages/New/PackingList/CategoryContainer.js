@@ -6,6 +6,9 @@ import { UnorderedItemListComponent } from "./UnorderedItemListComponent";
 import { v4 as uuidv4 } from "uuid";
 
 export const CategoryContainer = (props) => {
+  const checkFirstCategory = (categoryStatus) =>
+    categoryStatus === true ? "collapse flex-fill show" : "collapse flex-fill";
+
   return (
     <div className="packing-container d-flex" key={props.category}>
       <button
@@ -18,13 +21,17 @@ export const CategoryContainer = (props) => {
       >
         {capitalizeFirstChar(props.category)}
       </button>
-      <div className="collapse flex-fill" id={`${props.category}`}>
+      <div
+        className={checkFirstCategory(props.isItFirstCategory)}
+        id={`${props.category}`}
+      >
         <ul className="list-group list-group-flush packing-list">
           {props.items ? (
             props.items.map((item) => {
               const itemId = uuidv4();
               return (
                 <UnorderedItemListComponent
+                  key={item}
                   item={item}
                   itemId={itemId}
                   category={props.category}

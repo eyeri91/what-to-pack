@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const PackingList = (props) => {
   const listState = props.listState;
+  let isItFirstCategory = false;
   let categories = [];
   return (
     <div className="category-container d-flex flex-column">
@@ -15,6 +16,7 @@ const PackingList = (props) => {
           const addBtnId = uuidv4();
           return (
             <CategoryContainer
+              isItFirstCategory={isItFirstCategory}
               category={category}
               items={items}
               addBtnId={addBtnId}
