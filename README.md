@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/62069435-b2f8-4932-a13a-8722bccca4b2/deploy-status)](https://app.netlify.com/sites/what-to-pack/deploys)
 
+[Click and start packing!](https://what-to-pack.netlify.app/)
+
 Are you tired of the repetitive and tedious process of packing for different climates every two days as a flight attendant? Look no further than this all-in-one packing app, **What To Pack?!**!
 
 Say goodbye to the hassle of opening multiple apps to check weather and take notes. **WTP** streamlines the process by combining a weather app and a note, providing you with a must-carry item list as well as some recommendations for your next destination in just one click. Save time and energy while staying organized with our cabin crew-friendly packing app.
