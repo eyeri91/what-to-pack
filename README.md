@@ -1,5 +1,6 @@
 # What To Pack?!
 
+[Click and start packing!](https://what-to-pack.netlify.app/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/62069435-b2f8-4932-a13a-8722bccca4b2/deploy-status)](https://app.netlify.com/sites/what-to-pack/deploys)
 
 [Click and start packing!](https://what-to-pack.netlify.app/)
