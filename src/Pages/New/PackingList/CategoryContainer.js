@@ -1,6 +1,6 @@
 import React from "react";
 import { capitalizeFirstChar } from "../../../utils/utils";
-import { EmptyItemList } from "../EmptyItemList";
+import { EmptyItemList } from "./EmptyItemList";
 import { AddItemBtn } from "./ButtonsAndModal/AddItemBtn";
 import { UnorderedItemListComponent } from "./UnorderedItemListComponent";
 import { v4 as uuidv4 } from "uuid";
@@ -31,7 +31,7 @@ export const CategoryContainer = (props) => {
               const itemId = uuidv4();
               return (
                 <UnorderedItemListComponent
-                  key={item}
+                  key={itemId}
                   item={item}
                   itemId={itemId}
                   category={props.category}
@@ -39,9 +39,13 @@ export const CategoryContainer = (props) => {
               );
             })
           ) : (
-            <EmptyItemList />
+            <EmptyItemList key={"emptyList"} />
           )}
-          <AddItemBtn id={props.addBtnId} category={props.category} />
+          <AddItemBtn
+            id={props.addBtnId}
+            category={props.category}
+            key={props.addBtnId}
+          />
         </ul>
       </div>
     </div>
