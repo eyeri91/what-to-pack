@@ -20,13 +20,13 @@ const ForecastCard = ({ props }) => {
         className="accordion-collapse collapse"
         data-bs-parent="#weatherAccordion"
       >
-        <div className="accordion-body d-flex align-items-center">
+        <div className="accordion-body d-flex align-items-center p-1">
           <img src={props.icon} alt="weather-icon" className="forecast-icon" />
-          <h6 className="forecast-description fw-light mx-2">
+          <h6 className="forecast-description fw-light me-2">
             {props.description}{" "}
           </h6>
           <h4 className="fw-light ms-auto">
-            <span className="forecast-temp forecast-min-temp  text-nowrap me-2">
+            <span className="forecast-temp forecast-min-temp text-nowrap me-2">
               {`L: ${props.minTemp}`}{" "}
             </span>
             <span className=" forecast-temp forecast-max-temp  text-nowrap">

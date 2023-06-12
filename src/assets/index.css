@@ -140,8 +140,13 @@ code {
   max-width: 400px;
 }
 
+.weather-card,
+.forecast-card {
+  min-width: 230px;
+}
+
 .forecast-temp {
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.8rem + 1vw);
 }
 
 @media (min-width: 676) {

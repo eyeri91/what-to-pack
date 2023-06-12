@@ -6,7 +6,6 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg custom-light mb-5 sticky-top">
       <div className="container-fluid">
-        {/* <a className="navbar-brand" href="#"></a> */}
         <button
           className="navbar-toggler ms-auto"
           type="button"
