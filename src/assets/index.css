@@ -147,7 +147,7 @@ code {
 
 .category-btn {
   background-color: var(--bg-color);
-  width: 10rem;
+  min-width: 10rem;
   border-radius: 10px;
   color: var(--text);
   font-size: 1rem;
