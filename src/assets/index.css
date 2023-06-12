@@ -113,6 +113,16 @@ code {
   color: var(--point-text);
 }
 
+.title {
+  font-size: calc(0.3rem + 3.3vw);
+}
+
+@media (min-width: 800px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
 /* New - weather  */
 
 .packing-list-container {
