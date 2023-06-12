@@ -9,7 +9,7 @@ function New() {
   const listState = useSelector((state) => state.packingList.packingList);
 
   return (
-    <div className="new-list d-flex flex-column justify-content-center align-items-center align-items-md-start flex-md-row justify-content-md-evenly">
+    <div className="new-list d-flex flex-column justify-content-center align-items-center align-items-md-start flex-md-row justify-content-md-evenly mx-sm-4">
       {locationState ? <Weather /> : <p> Weather is not available</p>}
       {weatherState && <PackingListContainer listState={listState} />}
     </div>
