@@ -140,6 +140,16 @@ code {
   max-width: 400px;
 }
 
+.forecast-temp {
+  font-size: calc(1rem + 1vw);
+}
+
+@media (min-width: 676) {
+  .forecast-temp {
+    font-size: 1rem;
+  }
+}
+
 .title > *,
 .packing-list_heading {
   color: var(--text);

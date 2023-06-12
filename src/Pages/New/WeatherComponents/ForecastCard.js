@@ -22,13 +22,15 @@ const ForecastCard = ({ props }) => {
       >
         <div className="accordion-body d-flex align-items-center">
           <img src={props.icon} alt="weather-icon" className="forecast-icon" />
-          <h6 className="forecast-description fw-light ms-2">
+          <h6 className="forecast-description fw-light mx-2">
             {props.description}{" "}
           </h6>
           <h4 className="fw-light ms-auto">
-            <span className="forecast-min-temp">{`L: ${props.minTemp}`} </span>
-            <span className="forecast-max-temp ms-2">
-              {`L: ${props.maxTemp}`}{" "}
+            <span className="forecast-temp forecast-min-temp  text-nowrap me-2">
+              {`L: ${props.minTemp}`}{" "}
+            </span>
+            <span className=" forecast-temp forecast-max-temp  text-nowrap">
+              {`H: ${props.maxTemp}`}{" "}
             </span>
           </h4>
         </div>
