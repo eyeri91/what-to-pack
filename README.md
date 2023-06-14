@@ -27,11 +27,11 @@ Although packing became a daily routine as cabin crew, It still feels tedious an
 
 ### Development tools
 
-1. _React Router Dom_ to define routes and handle navigation in this web app, creating a smooth SPA experience.
-2. _Redux_ for centralized state management in a single store.
-3. _Redux Toolkit_ to simplify working with Redux in React app and to make debugging easier.
-4. _[Location API](https://rapidapi.com/wirefreethought/api/geodb-cities)_ to search destinations by name.
-5. _[Weather API](https://rapidapi.com/weatherapi/api/weatherapi-com/)_ to current weather and forecast data.
+1. **React Router Dom** to define routes and handle navigation in this web app, creating a smooth SPA experience.
+2. **Redux** for centralized state management in a single store.
+3. **Redux Toolkit** to simplify working with Redux in React app and to make debugging easier.
+4. **[Location API](https://rapidapi.com/wirefreethought/api/geodb-cities)** to search destinations by name.
+5. **[Weather API](https://rapidapi.com/weatherapi/api/weatherapi-com/)** to current weather and forecast data.
 
 ### Design planning with Figma
 
@@ -43,13 +43,11 @@ After having an rough idea to build **WTP**, I created a initial design using Fi
 
 ## Future features
 
-- Auto suggestions for different climates and weather condition:
+1. Auto suggestions for different climates and weather condition:
+   After checking the minimum and maximum temperature of the destination, **WTP** can give you some recommendations to pack. For instance, it the minimum temperature was below 0 °C, items like winter jackets, gloves and a knitted hat will be added to your clothing list.
 
-After checking the minimum and maximum temperature of the destination, **WTP** can give you some recommendations to pack. For instance, it the minimum temperature was below 0 °C, items like winter jackets, gloves and a knitted hat will be added to your clothing list.
-
-- Customized default list:
-
-It is surely not that it is only the cabin crew who travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the list as they want.
+2. Customized default list:
+   It is surely not that it is only the cabin crew who travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the list as they want.
 
 ## Development
 
