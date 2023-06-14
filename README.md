@@ -43,11 +43,11 @@ After having an rough idea to build **WTP**, I created a initial design using Fi
 
 ## Future features
 
-1. Auto suggestions for different climates and weather condition:<br>
-   After checking the minimum and maximum temperature of the destination, **WTP** can give you some recommendations to pack. For instance, it the minimum temperature was below 0 °C, items like winter jackets, gloves and a knitted hat will be added to your clothing list.
+**1. Auto suggestions for different climates and weather condition:**<br>
+After checking the minimum and maximum temperature of the destination, **WTP** can give you some recommendations to pack. For instance, it the minimum temperature was below 0 °C, items like winter jackets, gloves and a knitted hat will be added to your clothing list.
 
-2. Customized default list:<br>
-   It is surely not that it is only the cabin crew who travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the list as they want.
+**2. Customized default list:**<br>
+It is surely not that it is only the cabin crew who travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the list as they want.
 
 ## Development
 
