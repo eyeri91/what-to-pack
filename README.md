@@ -25,11 +25,15 @@ Although packing became a daily routine as cabin crew, It still feels tedious an
 
 ## How WTP was built
 
-1. React creat app based
-2. Location API, Weather API to get data
-3. Use Redux to save all state in one store and build one way communication.
+### Development tools
 
-### Design planning with Figma.
+1. _React Router Dom_ to define routes and handle navigation in this web app, creating a smooth SPA experience.
+2. _Redux_ for centralized state management in a single store.
+3. _Redux Toolkit_ to simplify working with Redux in React app and to make debugging easier.
+4. _[Location API](https://rapidapi.com/wirefreethought/api/geodb-cities)_ to search destinations by name.
+5. _[Weather API](https://rapidapi.com/weatherapi/api/weatherapi-com/)_ to current weather and forecast data.
+
+### Design planning with Figma
 
 After having an rough idea to build **WTP**, I created a initial design using Figma.
 
@@ -39,12 +43,22 @@ After having an rough idea to build **WTP**, I created a initial design using Fi
 
 ## Future features
 
-### Auto suggestions for different climates and weather condition:
+- Auto suggestions for different climates and weather condition:
 
 After checking the minimum and maximum temperature of the destination, **WTP** can give you some recommendations to pack. For instance, it the minimum temperature was below 0 °C, items like winter jackets, gloves and a knitted hat will be added to your clothing list.
 
-### Customized default list:
+- Customized default list:
 
 It is surely not that it is only the cabin crew who travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the list as they want.
 
 ## Development
+
+### Development
+
+1. Run `npm install` to install project dependencies.
+2. Run `npm start` to start the development server.
+
+### Production
+
+To build the project, run:
+`npm run build`
