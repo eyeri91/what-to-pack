@@ -1,6 +1,5 @@
 import React from "react";
 import { SavedTripButton } from "./SavedTripButton";
-import { getSavedDate } from "../../utils/utils";
 
 function Saved() {
   const keysForSavedTrips = Object.keys(localStorage);
@@ -8,10 +7,12 @@ function Saved() {
     return keysForSavedTrips.map((key) => {
       const nameOfTrip = key.substr(9);
       const keyForTrp = key;
+      const foundTripsObject = JSON.parse(localStorage.getItem(keyForTrp));
+      const dateOfFoundTrip = foundTripsObject[0].date;
       return (
         <SavedTripButton
           tripKey={keyForTrp}
-          date={getSavedDate()}
+          date={dateOfFoundTrip}
           city={nameOfTrip}
         />
       );
