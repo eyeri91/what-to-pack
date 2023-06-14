@@ -4,7 +4,6 @@ import { InputToAddItemOrCategory } from "./InputToAddItemOrCategory";
 export const AddCategoryModal = (props) => {
   return (
     <div
-      centered
       className="modal fade"
       id={props.id}
       tabIndex="-1"

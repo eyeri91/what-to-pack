@@ -18,9 +18,8 @@ export const DeleteItemModal = (props) => {
           <div className="modal-header border-bottom-0">
             <div className="modal-title fs-6" id="DeleteItemModal">
               Do you really want to delete
-              <span className="fw-bold">
-                {" "}
-                {capitalizeFirstChar(props.item)}
+              <span className="fst-italic item-to-delete">
+                {` ${capitalizeFirstChar(props.item)}`}
               </span>
             </div>
             <button
