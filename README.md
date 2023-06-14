@@ -10,11 +10,12 @@ Say goodbye to the hassle of opening multiple apps to check weather and take not
 
 ## Table of contents
 
-1. [How it works](#how-it-works)
+1. [What it does](#what-it-does)
 2. [Why WTP was built](#why-wtp-was-built)
 3. [How What To Pack?! was built](#how-what-to-pack-was-built)
-4. [Future features](#future-features)
-5. [Development](#development)
+4. [Challenges I faced and how I solved them](#challenges-i-faced-and-how-i-solved-them)
+5. [Future features](#future-features)
+6. [Development](#development)
 
 ## What it does
 
@@ -30,9 +31,11 @@ Although packing became a daily routine as cabin crew, It still feels tedious an
 
 ### Design planning with Figma.
 
-After having an rough idea to build **WTP**, I used Figma to design how the app should look.
+After having an rough idea to build **WTP**, I created a initial design using Figma.
 
 ![WTP design](src/assets/figmaForWTP.png)
+
+## Challenges I faced and how I solved them.
 
 ## Future features
 
@@ -40,8 +43,8 @@ After having an rough idea to build **WTP**, I used Figma to design how the app 
 
 After checking the minimum and maximum temperature of the destination, **WTP** can give you some recommendations to pack. For instance, it the minimum temperature was below 0 °C, items like winter jackets, gloves and a knitted hat will be added to your clothing list.
 
-### Change of a default item list:
+### Customized default list:
 
-It is surely not that it is only the cabin crew who travel often. There will be a new feature to edit a default item list so that anyone who goes on a short trip, such as businessmen and tour guides, can utilize the app.
+It is surely not that it is only the cabin crew who travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the list as they want.
 
 ## Development
