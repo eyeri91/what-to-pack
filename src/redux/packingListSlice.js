@@ -13,6 +13,9 @@ export const packingListSlice = createSlice({
     packingList: basicList,
   },
   reducers: {
+    updatePackingList: (state, action) => {
+      state.packingList = action.payload;
+    },
     deleteListItem: (state, action) => {
       state.packingList = deleteItem(
         state.packingList,
@@ -44,6 +47,7 @@ export const packingListSlice = createSlice({
 });
 
 export const {
+  updatePackingList,
   deleteListItem,
   addListItem,
   addListCategory,

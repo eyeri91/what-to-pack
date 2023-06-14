@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import basicList from "./PackingList/basicList";
 import Weather from "./WeatherComponents/Weather";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { updatePackingList } from "../../redux/packingListSlice";
 import { PackingListContainer } from "./PackingList/PackingListContainer";
 
 function New() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(updatePackingList(basicList));
+  }, [dispatch]);
   const locationState = useSelector((state) => state.locator.location);
   const weatherState = useSelector((state) => state.weather.weather);
   const listState = useSelector((state) => state.packingList.packingList);

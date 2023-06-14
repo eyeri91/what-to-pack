@@ -1,4 +1,4 @@
-const list = [
+export const basicList = [
   {
     documents: [
       "Passport",
@@ -33,4 +33,4 @@ const list = [
   { misc: ["Water", "Snack", "Medication bag", "Grocery bag"] },
 ];
 
-export default list;
+export default basicList;
