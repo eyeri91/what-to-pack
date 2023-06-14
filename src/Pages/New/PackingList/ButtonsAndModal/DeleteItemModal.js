@@ -13,7 +13,7 @@ export const DeleteItemModal = (props) => {
       aria-labelledby="DeleteItemModal"
       aria-hidden="true"
     >
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header border-bottom-0">
             <div className="modal-title fs-6" id="DeleteItemModal">
