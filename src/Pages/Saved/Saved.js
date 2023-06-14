@@ -21,7 +21,7 @@ function Saved() {
 
   return (
     <div className="container saved-container col-md-6">
-      <div className="saved d-flex justify-content-center align-items-center flex-wrap">
+      <div className="saved d-flex flex-row-reverse justify-content-center align-items-center flex-wrap">
         {keysForSavedTrips
           ? createSavedTripButtons(keysForSavedTrips)
           : "The list is empty!"}
