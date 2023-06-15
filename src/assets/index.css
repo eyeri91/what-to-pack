@@ -210,4 +210,10 @@ code {
 
 /* Saved */
 
+.delete-trip-btn {
+  padding: 0.3rem;
+  background: var(--);
+  color: var(--point-text);
+}
+
 /* Footer */

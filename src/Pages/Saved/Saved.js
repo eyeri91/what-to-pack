@@ -1,5 +1,5 @@
 import React from "react";
-import { SavedTripButton } from "./SavedTripButton";
+import { SavedTripButton } from "./SavedTripsButtonsAndModal/SavedTripButton";
 
 function Saved() {
   const keysForSavedTrips = Object.keys(localStorage);

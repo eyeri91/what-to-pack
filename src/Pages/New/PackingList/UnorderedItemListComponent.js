@@ -9,11 +9,13 @@ export const UnorderedItemListComponent = (props) => {
       key={props.itemId}
     >
       <span className="me-3">{capitalizeFirstChar(props.item)}</span>
-      <DeleteItemBtn
-        id={props.itemId}
-        category={props.category}
-        item={props.item}
-      />
+      {props.isItSavedTrip === true ? null : (
+        <DeleteItemBtn
+          id={props.itemId}
+          category={props.category}
+          item={props.item}
+        />
+      )}
     </li>
   );
 };

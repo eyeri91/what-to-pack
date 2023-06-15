@@ -31,6 +31,7 @@ export const CategoryContainer = (props) => {
               const itemId = uuidv4();
               return (
                 <UnorderedItemListComponent
+                  isItSavedTrip={props.isItSavedTrip}
                   key={itemId}
                   item={item}
                   itemId={itemId}
@@ -41,11 +42,13 @@ export const CategoryContainer = (props) => {
           ) : (
             <EmptyItemList key={"emptyList"} />
           )}
-          <AddItemBtn
-            id={props.addBtnId}
-            category={props.category}
-            key={props.addBtnId}
-          />
+          {props.isItSavedTrip === true ? null : (
+            <AddItemBtn
+              id={props.addBtnId}
+              category={props.category}
+              key={props.addBtnId}
+            />
+          )}
         </ul>
       </div>
     </div>

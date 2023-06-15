@@ -3,9 +3,10 @@ import WeatherCard from "../New/WeatherComponents/WeatherCard";
 import ForecastCard from "../New/WeatherComponents/ForecastCard";
 import GlowingPlaceholder from "../New/WeatherComponents/GlowingPlaceholder";
 import { v4 as uuidv4 } from "uuid";
-import { AddCategoryBtn } from "../New/PackingList/ButtonsAndModal/AddCategoryBtn";
-import { DeleteCategoryBtn } from "../New/PackingList/ButtonsAndModal/DeleteCategoryBtn";
+// import { AddCategoryBtn } from "../New/PackingList/ButtonsAndModal/AddCategoryBtn";
+// import { DeleteCategoryBtn } from "../New/PackingList/ButtonsAndModal/DeleteCategoryBtn";
 import { SaveCurrentListBtn } from "../New/PackingList/ButtonsAndModal/SaveCurrentListBtn";
+import { DeleteTripBtn } from "./SavedTripsButtonsAndModal/DeleteTripBtn";
 
 import CategoryContainer from "../New/PackingList/CategoryContainer";
 import { useParams } from "react-router-dom";
@@ -18,6 +19,7 @@ export const SavedDetails = () => {
   const forecastState = foundTripsObject[1];
   const listState = foundTripsObject[2];
   let categories = [];
+  const isItSavedTrip = true;
 
   return (
     <div className="container saved-details d-flex flex-column justify-content-center align-items-center align-items-md-start flex-md-row justify-content-md-evenly">
@@ -49,6 +51,7 @@ export const SavedDetails = () => {
               const addBtnId = uuidv4();
               return (
                 <CategoryContainer
+                  isItSavedTrip={isItSavedTrip}
                   isItFirstCategory={isItFirstCategory}
                   category={category}
                   items={items}
@@ -59,13 +62,17 @@ export const SavedDetails = () => {
 
             return false;
           })}
-          <div className="category-btns d-flex justify-content-evenly ">
+          {/* <div className="category-btns d-flex justify-content-evenly ">
             <AddCategoryBtn />
             <DeleteCategoryBtn categories={categories} />
-          </div>
+          </div> */}
         </div>
         <div className="save-list-btn-container d-flex justify-content-center mt-5 mb-4 ">
-          <SaveCurrentListBtn />
+          {isItSavedTrip ? (
+            <DeleteTripBtn tripKey={tripKey} />
+          ) : (
+            <SaveCurrentListBtn />
+          )}
         </div>
       </div>
     </div>
