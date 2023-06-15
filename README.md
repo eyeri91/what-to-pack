@@ -51,6 +51,10 @@ After having an rough idea to build **WTP**, I created a initial design using Fi
 
 - It is surely not that it is only the cabin crew who travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the list as they want.
 
+**Edit already saved trips:**<br>
+
+- If a user forgets to add or remove items and accidentally saves the packing list, they can easily make edits whenever they desire by opening their saved trips.
+
 ## Development
 
 ### Development
