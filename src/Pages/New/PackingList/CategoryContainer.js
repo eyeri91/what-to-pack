@@ -26,7 +26,7 @@ export const CategoryContainer = (props) => {
         id={`${props.category}`}
       >
         <ul className="list-group list-group-flush packing-list">
-          {props.items ? (
+          {props.items.length > 1 ? (
             props.items.map((item) => {
               const itemId = uuidv4();
               return (
