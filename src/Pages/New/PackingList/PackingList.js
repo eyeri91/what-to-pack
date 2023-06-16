@@ -1,11 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { CategoryContainer } from "./CategoryContainer";
 import { AddCategoryBtn } from "./ButtonsAndModal/AddCategoryBtn";
 import { DeleteCategoryBtn } from "./ButtonsAndModal/DeleteCategoryBtn";
 import { v4 as uuidv4 } from "uuid";
 
 const PackingList = (props) => {
-  const listState = props.listState;
+  const listState = useSelector((state) => state.packingList.packingList);
+
   let isItFirstCategory = false;
   let categories = [];
   return (

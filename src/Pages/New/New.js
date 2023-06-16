@@ -12,12 +12,11 @@ function New() {
   }, [dispatch]);
   const locationState = useSelector((state) => state.locator.location);
   const weatherState = useSelector((state) => state.weather.weather);
-  const listState = useSelector((state) => state.packingList.packingList);
 
   return (
     <div className="new-list d-flex flex-column justify-content-center align-items-center align-items-md-start flex-md-row justify-content-md-evenly mx-sm-4">
       {locationState ? <Weather /> : <p> Weather is not available</p>}
-      {weatherState && <PackingListContainer listState={listState} />}
+      {weatherState && <PackingListContainer />}
     </div>
   );
 }
