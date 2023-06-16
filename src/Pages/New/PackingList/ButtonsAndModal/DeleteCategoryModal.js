@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 // import { deleteCategory } from "../../../../utils/listUtils";
 import { deleteListCategory } from "../../../../redux/packingListSlice";
 import { SelectFormToDeleteCategory } from "./SelectFormToDeleteCategory";
+import { updatePackingList } from "../../../../redux/packingListSlice";
 
 export const DeleteCategoryModal = (props) => {
   const [selectedCat, setSelectedCat] = useState("");
@@ -36,8 +37,19 @@ export const DeleteCategoryModal = (props) => {
               className="reset-btn delete-confirm-btn "
               data-bs-dismiss="modal"
               onClick={() => {
-                // deleteCategory(basicList, selectedCat);
-                dispatch(deleteListCategory({ category: selectedCat }));
+                if (props.tripKey) {
+                  const foundTripsObject = JSON.parse(
+                    localStorage.getItem(props.tripKey)
+                  );
+                  const foundTripListState = foundTripsObject[2];
+                  const newTripListState = foundTripListState.filter(
+                    (category) => !category.hasOwnProperty(selectedCat)
+                  );
+                  props.setFoundTripListState(newTripListState);
+                  dispatch(updatePackingList(newTripListState));
+                } else {
+                  dispatch(deleteListCategory({ category: selectedCat }));
+                }
               }}
             >
               Delete

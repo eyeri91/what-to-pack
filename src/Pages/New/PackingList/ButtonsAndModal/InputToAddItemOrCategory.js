@@ -48,7 +48,7 @@ export const InputToAddItemOrCategory = (props) => {
               ? dispatch(
                   addListItem({ category: props.category, item: newElement })
                 )
-              : dispatch(addListCategory({ category: newElement, item: "" }));
+              : dispatch(addListCategory({ category: newElement, item: [] }));
           }
         }}
       >

@@ -8,6 +8,8 @@ export const DeleteCategoryBtn = (props) => {
       <DeleteCategoryModal
         id={deleteCategoryModalId}
         categories={props.categories}
+        setFoundTripListState={props.setFoundTripListState}
+        tripKey={props.tripKey}
       />
       <button
         type="button"

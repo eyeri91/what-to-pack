@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { useParams } from "react-router-dom";
 
@@ -11,20 +11,26 @@ import { DeleteCategoryBtn } from "../New/PackingList/ButtonsAndModal/DeleteCate
 import { SaveCurrentListBtn } from "../New/PackingList/ButtonsAndModal/SaveCurrentListBtn";
 import { DeleteTripBtn } from "./SavedTripsButtonsAndModal/DeleteTripBtn";
 import CategoryContainer from "../New/PackingList/CategoryContainer";
+import { checkWeather } from "../../redux/currentWeatherSlice";
+import { checkForecast } from "../../redux/forecastCheckSlice";
 
 export const SavedDetails = () => {
+  const dispatch = useDispatch();
   const { tripKey } = useParams();
   let categories = [];
   const isItSavedTrip = true;
 
   const foundTripsObject = JSON.parse(localStorage.getItem(tripKey));
   const weatherState = foundTripsObject[0];
+  weatherState.isItToday = false;
   const forecastState = foundTripsObject[1];
   const [foundTripListState, setFoundTripListState] = useState(
     foundTripsObject[2]
   );
-
-  weatherState.isItToday = false;
+  useEffect(() => {
+    dispatch(checkWeather(weatherState));
+    dispatch(checkForecast(forecastState));
+  }, [dispatch, weatherState, forecastState]);
 
   return (
     <div className="container saved-details d-flex flex-column justify-content-center align-items-center align-items-md-start flex-md-row justify-content-md-evenly">
@@ -73,7 +79,11 @@ export const SavedDetails = () => {
               tripKey={tripKey}
               setFoundTripListState={setFoundTripListState}
             />
-            <DeleteCategoryBtn categories={categories} />
+            <DeleteCategoryBtn
+              tripKey={tripKey}
+              setFoundTripListState={setFoundTripListState}
+              categories={categories}
+            />
           </div>
         </div>
         <div className="save-list-btn-container d-flex justify-content-center mt-5 mb-4 ">

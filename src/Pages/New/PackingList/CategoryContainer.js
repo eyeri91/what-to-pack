@@ -42,13 +42,12 @@ export const CategoryContainer = (props) => {
           ) : (
             <EmptyItemList key={"emptyList"} />
           )}
-          {props.isItSavedTrip === true ? null : (
-            <AddItemBtn
-              id={props.addBtnId}
-              category={props.category}
-              key={props.addBtnId}
-            />
-          )}
+
+          <AddItemBtn
+            id={props.addBtnId}
+            category={props.category}
+            key={props.addBtnId}
+          />
         </ul>
       </div>
     </div>
