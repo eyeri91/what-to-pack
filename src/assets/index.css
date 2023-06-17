@@ -198,21 +198,19 @@ code {
   color: var(--dark);
 }
 
-.save-list-btn {
-  padding: 0.3rem;
-  background: var(--);
+.item-to-delete {
   color: var(--point-text);
 }
 
-.item-to-delete {
-  color: var(--point-text);
+.save-list-btn {
+  background: var(--point-text);
+  color: var(--bg-color);
 }
 
 /* Saved */
 
 .delete-trip-btn {
-  padding: 0.3rem;
-  background: var(--);
+  background: var(--light);
   color: var(--point-text);
 }
 
