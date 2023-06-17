@@ -4,7 +4,7 @@ export const SaveCurrentListModal = (props) => {
   const weatherState = useSelector((state) => state.weather.weather);
   const forecastState = useSelector((state) => state.forecast.forecast);
   const listState = useSelector((state) => state.packingList.packingList);
-  const tripName = props.tripKey ?? weatherState.id + weatherState.city;
+  const tripName = weatherState.id + weatherState.city;
   return (
     <div
       className="modal fade"
@@ -35,7 +35,6 @@ export const SaveCurrentListModal = (props) => {
                   forecastState,
                   listState,
                 ];
-
                 localStorage.setItem(
                   tripName,
                   JSON.stringify(savedTripInformationArray)

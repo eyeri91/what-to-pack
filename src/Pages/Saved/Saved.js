@@ -5,17 +5,17 @@ function Saved() {
   const keysForSavedTrips = Object.keys(localStorage);
   const createSavedTripButtons = (keysForSavedTrips) => {
     return keysForSavedTrips.map((key) => {
-      console.log(key);
       const nameOfTrip = key.substr(9);
       const keyForTrp = key;
-      const foundTripsObject = JSON.parse(localStorage.getItem(keyForTrp));
-      console.log(foundTripsObject);
-      const dateOfFoundTrip = foundTripsObject[0].date;
+      const foundTripObject = JSON.parse(localStorage.getItem(keyForTrp));
+
+      const dateOfFoundTrip = foundTripObject[0].date;
       return (
         <SavedTripButton
           tripKey={keyForTrp}
           date={dateOfFoundTrip}
           city={nameOfTrip}
+          foundTripObject={foundTripObject}
         />
       );
     });

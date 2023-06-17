@@ -1,15 +1,11 @@
 import React from "react";
 import { AddCategoryModal } from "./AddCategoryModal";
 
-export const AddCategoryBtn = (props) => {
+export const AddCategoryBtn = () => {
   const addCategoryModalId = "addCatModal";
   return (
     <>
-      <AddCategoryModal
-        id={addCategoryModalId}
-        tripKey={props.tripKey}
-        setFoundTripListState={props.setFoundTripListState}
-      />
+      <AddCategoryModal id={addCategoryModalId} />
       <button
         type="button"
         className="reset-btn add-category-btn "

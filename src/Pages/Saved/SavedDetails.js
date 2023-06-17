@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { useParams } from "react-router-dom";
 
@@ -11,26 +11,17 @@ import { DeleteCategoryBtn } from "../New/PackingList/ButtonsAndModal/DeleteCate
 import { SaveCurrentListBtn } from "../New/PackingList/ButtonsAndModal/SaveCurrentListBtn";
 import { DeleteTripBtn } from "./SavedTripsButtonsAndModal/DeleteTripBtn";
 import CategoryContainer from "../New/PackingList/CategoryContainer";
-import { checkWeather } from "../../redux/currentWeatherSlice";
-import { checkForecast } from "../../redux/forecastCheckSlice";
 
 export const SavedDetails = () => {
-  const dispatch = useDispatch();
   const { tripKey } = useParams();
   let categories = [];
   const isItSavedTrip = true;
-
-  const foundTripsObject = JSON.parse(localStorage.getItem(tripKey));
-  const weatherState = foundTripsObject[0];
-  weatherState.isItToday = false;
-  const forecastState = foundTripsObject[1];
-  const [foundTripListState, setFoundTripListState] = useState(
-    foundTripsObject[2]
+  const weatherState = useSelector((state) => state.weather.weather);
+  const forecastState = useSelector((state) => state.forecast.forecast);
+  const foundTripListState = useSelector(
+    (state) => state.packingList.packingList
   );
-  useEffect(() => {
-    dispatch(checkWeather(weatherState));
-    dispatch(checkForecast(forecastState));
-  }, [dispatch, weatherState, forecastState]);
+  // weatherState.isItToday = false;
 
   return (
     <div className="container saved-details d-flex flex-column justify-content-center align-items-center align-items-md-start flex-md-row justify-content-md-evenly">
@@ -55,16 +46,15 @@ export const SavedDetails = () => {
         <h3 className="packing-list_heading heading">What to pack</h3>
         <div className="category-container d-flex flex-column">
           {foundTripListState.map((listCategory) => {
-            let isItFirstCategory = false;
+            // let isItFirstCategory = false;
 
             for (const [category, items] of Object.entries(listCategory)) {
               categories.push(category);
               const addBtnId = uuidv4();
-
               return (
                 <CategoryContainer
                   isItSavedTrip={isItSavedTrip}
-                  isItFirstCategory={isItFirstCategory}
+                  // isItFirstCategory={isItFirstCategory}
                   category={category}
                   items={items}
                   addBtnId={addBtnId}
@@ -75,15 +65,8 @@ export const SavedDetails = () => {
             return false;
           })}
           <div className="category-btns d-flex justify-content-evenly ">
-            <AddCategoryBtn
-              tripKey={tripKey}
-              setFoundTripListState={setFoundTripListState}
-            />
-            <DeleteCategoryBtn
-              tripKey={tripKey}
-              setFoundTripListState={setFoundTripListState}
-              categories={categories}
-            />
+            <AddCategoryBtn tripKey={tripKey} />
+            <DeleteCategoryBtn categories={categories} />
           </div>
         </div>
         <div className="save-list-btn-container d-flex justify-content-center mt-5 mb-4 ">

@@ -1,16 +1,12 @@
 import React from "react";
 import { SaveCurrentListModal } from "./SaveCurrentListModal";
 
-export const SaveCurrentListBtn = (props) => {
+export const SaveCurrentListBtn = () => {
   const saveListBtnId = "saveBtnId";
 
   return (
     <>
-      <SaveCurrentListModal
-        id={saveListBtnId}
-        tripKey={props.tripKey}
-        isItSavedTrip={props.isItSavedTrip}
-      />
+      <SaveCurrentListModal id={saveListBtnId} />
       <button
         type="button"
         className="save-list-btn rounded reset-btn d-flex align-items-center"

@@ -3,9 +3,8 @@ import { useDispatch } from "react-redux";
 import {
   addListItem,
   addListCategory,
-  updatePackingList,
+  // updatePackingList,
 } from "../../../../redux/packingListSlice";
-// import { capitalizeFirstChar } from "../../../../utils/utils";
 
 export const InputToAddItemOrCategory = (props) => {
   const dispatch = useDispatch();
@@ -34,22 +33,22 @@ export const InputToAddItemOrCategory = (props) => {
         id="button-addon2"
         data-bs-dismiss="modal"
         onClick={() => {
-          if (props.tripKey) {
-            const foundTripsObject = JSON.parse(
-              localStorage.getItem(props.tripKey)
-            );
-            const foundTripListState = foundTripsObject[2];
-            const newObject = { [newElement]: [] };
-            foundTripListState.push(newObject);
-            props.setFoundTripListState(foundTripListState);
-            dispatch(updatePackingList(foundTripListState));
-          } else {
-            elementType === "item"
-              ? dispatch(
-                  addListItem({ category: props.category, item: newElement })
-                )
-              : dispatch(addListCategory({ category: newElement, item: [] }));
-          }
+          // if (props.tripKey) {
+          //   const foundTripsObject = JSON.parse(
+          //     localStorage.getItem(props.tripKey)
+          //   );
+          //   const foundTripListState = foundTripsObject[2];
+          //   const newObject = { [newElement]: [] };
+          //   foundTripListState.push(newObject);
+
+          //   dispatch(updatePackingList(foundTripListState));
+          // } else {
+          elementType === "item"
+            ? dispatch(
+                addListItem({ category: props.category, item: newElement })
+              )
+            : dispatch(addListCategory({ category: newElement, item: [""] }));
+          // }
         }}
       >
         Save
