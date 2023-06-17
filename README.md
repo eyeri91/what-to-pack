@@ -19,6 +19,8 @@ Say goodbye to the hassle of opening multiple apps to check weather and take not
 
 ## What it does
 
+**What to Pack** is a helpful travel app that helps users organize their packing list based on their destination and weather. Users can easily search for any location and view detailed weather forecasts for the next two days, including today. The app comes with a default packing list, but users can personalize it by adding or removing categories and items to suit their travel plans. Trip details can be saved for future reference, allowing users to conveniently edit their packing list whenever needed.
+
 ## Why WTP was built?
 
 Although packing became a daily routine as cabin crew, It still feels tedious and time consuming. I have always thought that I could shorten this process. What if there was an app where a user can check the forecast of a destination, get a default item list the user saved and also suggestions for weather specific items at one go? This is why I decided to build this app, to "automate boring things".
@@ -43,17 +45,19 @@ After having an rough idea to build **WTP**, I created a initial design using Fi
 
 ## Future features
 
-**Auto suggestions for different climates and weather condition:**<br>
+### Auto suggestions for different climates and weather condition
 
 - After checking the minimum and maximum temperature of the destination, **WTP** can give you some recommendations to pack. For instance, it the minimum temperature was below 0 °C, items like winter jackets, gloves and a knitted hat will be added to your clothing list.
 
-**Customized default list:**<br>
+### Settings to customize
 
-- It is surely not that it is only the cabin crew who travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the list as they want.
+**Personalized Packing List:**<br>
 
-**Edit already saved trips:**<br>
+- It is surely not that it is only the cabin crew who travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the default list as they want.
 
-- If a user forgets to add or remove items and accidentally saves the packing list, they can easily make edits whenever they desire by opening their saved trips.
+**Enhanced Forecast Customization:**<br>
+
+- Soon, users will have the flexibility to choose how many days of forecast information they want to receive. While the current setting provides forecasts for the next two days, a forthcoming settings page will allow users to customize this based on their preferences.
 
 ## Development
 
