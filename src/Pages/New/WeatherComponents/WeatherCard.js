@@ -3,10 +3,10 @@ import Title from "../Title";
 
 const WeatherCard = ({ props }) => {
   return (
-    <div className="weather-card accordion-item">
-      <h2 className="accordion-header">
+    <div className="weather-card accordion-item border-top-0">
+      <h2 className="accordion-header ">
         <button
-          className="accordion-button"
+          className="accordion-button rounded-top-3 "
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#panelsStayOpen-collapseOne"

@@ -2,10 +2,10 @@ import React from "react";
 
 const ForecastCard = ({ props }) => {
   return (
-    <div className="forecast-card accordion-item">
+    <div className="forecast-card accordion-item ">
       <h2 className="accordion-header">
         <button
-          className="accordion-button collapsed"
+          className="accordion-button collapsed "
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={`#${props.id}`}

@@ -44,7 +44,7 @@ const Weather = () => {
 
   return (
     <div
-      className="weather-container  accordion accordion-flush mt-5 me-2 "
+      className="weather-container  accordion accordion-flush mt-5"
       id="weatherAccordion"
     >
       <h3 className="weather-container_heading heading">Weather</h3>

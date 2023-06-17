@@ -10,7 +10,7 @@ export const CategoryContainer = (props) => {
   //   categoryStatus === true ? "collapse flex-fill show" : "collapse flex-fill";
 
   return (
-    <div className="packing-container d-flex" key={props.category}>
+    <div className="packing-container d-flex ms-3" key={props.category}>
       <button
         className="reset-btn category-btn mb-2 packing-category"
         type="button"
