@@ -21,7 +21,6 @@ export const SavedDetails = () => {
   const foundTripListState = useSelector(
     (state) => state.packingList.packingList
   );
-  // weatherState.isItToday = false;
 
   return (
     <div className="container saved-details d-flex flex-column justify-content-center align-items-center align-items-md-start flex-md-row justify-content-md-evenly">
@@ -31,7 +30,11 @@ export const SavedDetails = () => {
       >
         <h3 className="weather-container_heading heading">Weather</h3>
         {weatherState ? (
-          <WeatherCard props={weatherState} key={weatherState.id} />
+          <WeatherCard
+            props={weatherState}
+            key={weatherState.id}
+            isItSavedTrip={true}
+          />
         ) : (
           GlowingPlaceholder
         )}

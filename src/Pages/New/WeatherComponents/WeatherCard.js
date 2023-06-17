@@ -13,7 +13,7 @@ const WeatherCard = ({ props }) => {
           aria-expanded="true"
           aria-controls={"panelsStayOpen-collapseOne"}
         >
-          {props.isItToday ? "Today" : props.date}
+          {props.isItSavedTrip ? props.date : "Today"}
         </button>
       </h2>
 
