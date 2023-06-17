@@ -33,7 +33,7 @@ export const SavedDetails = () => {
           <WeatherCard
             props={weatherState}
             key={weatherState.id}
-            isItSavedTrip={true}
+            isItSavedTrip={isItSavedTrip}
           />
         ) : (
           GlowingPlaceholder
@@ -49,15 +49,11 @@ export const SavedDetails = () => {
         <h3 className="packing-list_heading heading">What to pack</h3>
         <div className="category-container d-flex flex-column">
           {foundTripListState.map((listCategory) => {
-            // let isItFirstCategory = false;
-
             for (const [category, items] of Object.entries(listCategory)) {
               categories.push(category);
               const addBtnId = uuidv4();
               return (
                 <CategoryContainer
-                  isItSavedTrip={isItSavedTrip}
-                  // isItFirstCategory={isItFirstCategory}
                   category={category}
                   items={items}
                   addBtnId={addBtnId}
@@ -68,7 +64,7 @@ export const SavedDetails = () => {
             return false;
           })}
           <div className="category-btns d-flex justify-content-evenly ">
-            <AddCategoryBtn tripKey={tripKey} />
+            <AddCategoryBtn />
             <DeleteCategoryBtn categories={categories} />
           </div>
         </div>
@@ -76,10 +72,7 @@ export const SavedDetails = () => {
           {isItSavedTrip ? (
             <>
               <DeleteTripBtn tripKey={tripKey} />
-              <SaveCurrentListBtn
-                tripKey={tripKey}
-                isItSavedTrip={isItSavedTrip}
-              />
+              <SaveCurrentListBtn isItSavedTrip={isItSavedTrip} />
             </>
           ) : (
             <SaveCurrentListBtn />

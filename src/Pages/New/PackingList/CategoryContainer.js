@@ -28,7 +28,6 @@ export const CategoryContainer = (props) => {
               const itemId = uuidv4();
               return (
                 <UnorderedItemListComponent
-                  isItSavedTrip={props.isItSavedTrip}
                   key={itemId}
                   item={item}
                   itemId={itemId}
