@@ -7,8 +7,8 @@ import { v4 as uuidv4 } from "uuid";
 
 const PackingList = (props) => {
   const listState = useSelector((state) => state.packingList.packingList);
-
-  let isItFirstCategory = false;
+  let isItFirstCategory = true;
+  let isFirstIteration = true;
   let categories = [];
   return (
     <div className="category-container d-flex flex-column">
@@ -16,16 +16,17 @@ const PackingList = (props) => {
         for (const [category, items] of Object.entries(listCategory)) {
           categories.push(category);
           const addBtnId = uuidv4();
+          const isFirst = isFirstIteration && isItFirstCategory;
+          isFirstIteration = false;
           return (
             <CategoryContainer
-              isItFirstCategory={isItFirstCategory}
+              isItFirstCategory={isFirst}
               category={category}
               items={items}
               addBtnId={addBtnId}
             />
           );
         }
-
         return false;
       })}
       <div className="category-btns d-flex justify-content-evenly ">
