@@ -3,7 +3,10 @@ import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { checkWeather } from "../../../redux/currentWeatherSlice";
 import { checkForecast } from "../../../redux/forecastCheckSlice";
 import { setLatAndLon, fetchWeather } from "../../../services/WeatherAPI";
-import { createWeatherObjects } from "../../../utils/utils";
+import {
+  createWeatherObjects,
+  handleFetchWeatherError,
+} from "../../../utils/utils";
 
 import { GlowingPlaceholder } from "./GlowingPlaceholder";
 import WeatherCard from "./WeatherCard";
@@ -20,14 +23,16 @@ const Weather = () => {
     let currentWeatherObject, forecastObjectsArray;
 
     const fetchWeatherData = async () =>
-      await fetchWeather(latAndLon).then(async (res) => {
-        const WeatherResponse = await res.json();
-        [currentWeatherObject, forecastObjectsArray] =
-          createWeatherObjects(WeatherResponse);
+      await fetchWeather(latAndLon)
+        .then(async (res) => {
+          const WeatherResponse = await res.json();
+          [currentWeatherObject, forecastObjectsArray] =
+            createWeatherObjects(WeatherResponse);
 
-        dispatch(checkWeather(currentWeatherObject));
-        dispatch(checkForecast(forecastObjectsArray));
-      });
+          dispatch(checkWeather(currentWeatherObject));
+          dispatch(checkForecast(forecastObjectsArray));
+        })
+        .catch(handleFetchWeatherError);
 
     fetchWeatherData();
   }, [dispatch]);

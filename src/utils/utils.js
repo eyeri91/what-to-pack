@@ -96,3 +96,7 @@ const createForecastObject = (forecastItem) => {
 
   return forecastForDay;
 };
+
+export const handleFetchWeatherError = () => {
+  alert("Error: Invalid location ");
+};
