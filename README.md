@@ -6,7 +6,7 @@
 
 Are you tired of the repetitive and tedious process of packing for different climates every two days as a flight attendant? Look no further than this all-in-one packing app, **What To Pack?!**!
 
-Say goodbye to the hassle of opening multiple apps to check weather and take notes. **WTP** streamlines the process by combining a weather app and a note, providing you with a must-carry item list as well as some recommendations for your next destination in just one click. Save time and energy while staying organized with our cabin crew-friendly packing app.
+Say goodbye to the hassle of opening multiple apps to check the weather and take notes. **WTP** streamlines the process by combining a weather app and a note, providing you with a must-carry item list as well as some recommendations for your next destination in just one click. Save time and energy while staying organized with our cabin crew-friendly packing app.
 
 ## Table of contents
 
@@ -37,7 +37,7 @@ Although packing became a daily routine as cabin crew, It still feels tedious an
 
 ### Design planning with Figma
 
-After having an rough idea to build **WTP**, I created a initial design using Figma.
+After having a rough idea to build **WTP**, I created an initial design using Figma.
 
 ![WTP design](src/assets/figmaForWTP.png)
 
@@ -45,7 +45,7 @@ After having an rough idea to build **WTP**, I created a initial design using Fi
 
 ## Future features
 
-### Auto suggestions for different climates and weather condition
+### Auto suggestions for different climates and weather conditions
 
 - After checking the minimum and maximum temperature of the destination, **WTP** can give you some recommendations to pack. For instance, it the minimum temperature was below 0 °C, items like winter jackets, gloves and a knitted hat will be added to your clothing list.
 
@@ -53,7 +53,7 @@ After having an rough idea to build **WTP**, I created a initial design using Fi
 
 **Personalized Packing List:**<br>
 
-- It is surely not that it is only the cabin crew who travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the default list as they want.
+- It is surely not that only the cabin crew travel often. With the addition of the feature to edit the default items and categories, any frequent travelers can customize the default list as they want.
 
 **Enhanced Forecast Customization:**<br>
 
