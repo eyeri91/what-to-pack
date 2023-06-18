@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import TicketImg from "../../assets/ticket.svg";
+import TicketImg from "../../assets/images/ticket.svg";
 
 function Home() {
   let navigate = useNavigate();

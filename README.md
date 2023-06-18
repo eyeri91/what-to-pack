@@ -41,7 +41,7 @@ Although packing became a daily routine as cabin crew, It still feels tedious an
 
 After having a rough idea to build **WTP**, I created an initial design using Figma.
 
-![WTP design](src/assets/figmaForWTP.png)
+![WTP design](./src/assets/images/figmaForWTP.png)
 
 ## Challenges I faced and how I solved them.
 
