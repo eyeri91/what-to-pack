@@ -19,7 +19,7 @@ Say goodbye to the hassle of opening multiple apps to check the weather and take
 
 ## What it does
 
-![wtpREADME](./src/assets/images/figmaForWTP.png)
+![wtpREADME](./src/assets/images/wtpREADME.png.png)
 
 **What to Pack** is a helpful travel app that helps users organize their packing list based on their destination and weather. Users can easily search for any location and view detailed weather forecasts for the next two days, including today. The app comes with a default packing list, but users can personalize it by adding or removing categories and items to suit their travel plans. Trip details can be saved for future reference, allowing users to conveniently edit their packing list whenever needed.
 
