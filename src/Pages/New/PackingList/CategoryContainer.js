@@ -26,7 +26,9 @@ export const CategoryContainer = (props) => {
         id={`${props.category}`}
       >
         <ul className="list-group list-group-flush packing-list">
-          {props.items.length !== 0 ? (
+          {props.items.length === 0 ? (
+            <EmptyItemList myKey={"emptyList"} />
+          ) : (
             props.items.map((item) => {
               const itemId = uuidv4();
               return (
@@ -38,8 +40,6 @@ export const CategoryContainer = (props) => {
                 />
               );
             })
-          ) : (
-            <EmptyItemList key={"emptyList"} />
           )}
 
           <AddItemBtn

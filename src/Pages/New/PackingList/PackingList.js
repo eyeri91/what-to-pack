@@ -5,7 +5,7 @@ import { AddCategoryBtn } from "./ButtonsAndModal/AddCategoryBtn";
 import { DeleteCategoryBtn } from "./ButtonsAndModal/DeleteCategoryBtn";
 import { v4 as uuidv4 } from "uuid";
 
-const PackingList = (props) => {
+const PackingList = () => {
   const listState = useSelector((state) => state.packingList.packingList);
   let isItFirstCategory = true;
   let isFirstIteration = true;
