@@ -20,6 +20,7 @@ const PackingList = () => {
           isFirstIteration = false;
           return (
             <CategoryContainer
+              key={category}
               isItFirstCategory={isFirst}
               category={category}
               items={items}
