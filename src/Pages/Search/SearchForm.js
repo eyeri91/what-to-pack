@@ -8,7 +8,7 @@ export default function SearchForm({ onSearchChange }) {
   const loadOptions = async (input) => {
     try {
       const response = await fetch(
-        `${GEO_API_URL}/cities?minPopulation=500000&namePrefix=${input}`,
+        `${GEO_API_URL}/cities?minPopulation=300000&namePrefix=${input}`,
         geoApiOptions
       );
       const response_1 = await response.json();
